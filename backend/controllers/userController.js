@@ -47,6 +47,9 @@ const createUser = asyncHandler(async (req, res) => {
   //   res.json({ message: "user created successfully", username, password, email });
 });
 
+// @desc    Login the user
+// @route   POST /api/v1/users/auth
+
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -72,4 +75,15 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 });
-export { createUser, loginUser };
+
+// @desc    Logout the current user
+// @route   POST /api/v1/users/logout
+const logoutCurrentUser = asyncHandler(async (req, res) => {
+  res.cookie("jwt", "", {
+    httyOnly: true,
+    expires: new Date(0),
+  });
+
+  res.status(200).json({ message: "Logged out successfully" });
+});
+export { createUser, loginUser, logoutCurrentUser };

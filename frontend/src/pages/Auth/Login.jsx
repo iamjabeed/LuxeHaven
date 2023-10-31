@@ -17,8 +17,8 @@ const Login = () => {
   const [isVisiblePass, setIsVisiblePass] = useState(false);
 
   // Define a login mutation function and check if it's loading
-  const [login, { isLoading }] = useLoginMutation();
-
+  const [login, { isLoading, error, data }] = useLoginMutation();
+  // console.log(isLoading, error, data);
   // Get user information from the application state
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -42,14 +42,24 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (email.trim() === "" || password.trim() === "") {
+      toast.error("Please enter valid credentials!");
+      return;
+    }
+
     try {
       const res = await login({ email, password }).unwrap();
       console.log(res);
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
-      toast("Wow so easy!");
+      toast.success("Successfully Logged In!");
     } catch (err) {
-      toast.error(err?.data?.message || err.error);
+      if (err instanceof Error) {
+        // Handle errors here
+        toast.error(err.message);
+      } else {
+        toast.error("An error occurred during login.");
+      }
     }
   };
 
@@ -85,7 +95,7 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#cececec3]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -101,20 +111,11 @@ const Login = () => {
                 <RiLockPasswordLine size={26} className="text-[#08D9D6]" />
                 Password
               </label>
-              {/* <input
-                type={`isVisiblePass?"text"  :  "password"`}
-                id="password"
-                className="mt-1 p-2 border rounded w-[440px] mb-4 bg-[#0F0F10] placeholder-[#cececec3] text-[#cfcccc] outline-none border-[#57575b] focus:border-[#FF2E63]"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <BiHide /> */}
               <div className="relative">
                 <input
                   type={isVisiblePass ? "text" : "password"}
                   id="password"
-                  className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#cececec3] text-[#cfcccc] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                  className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                   placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

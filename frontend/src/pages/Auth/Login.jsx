@@ -47,6 +47,7 @@ const Login = () => {
       console.log(res);
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
+      toast("Wow so easy!");
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }
@@ -88,7 +89,7 @@ const Login = () => {
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                autocomplete="off"
+                autoComplete="off"
               />
             </div>
 
@@ -119,7 +120,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <span
-                  className="absolute top-[15px] left-[24rem] cursor-pointer"
+                  className="absolute top-[15px] left-[28rem] cursor-pointer"
                   onClick={() => setIsVisiblePass(!isVisiblePass)}
                 >
                   {isVisiblePass ? (

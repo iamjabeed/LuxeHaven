@@ -1,5 +1,5 @@
 #navigation-container {
-  width: 4%;
+  width: 6rem;
   transition: width 0.3s ease-in-out;
   overflow: hidden; /* Hide overflowing content during transition */
 }

@@ -54,7 +54,7 @@ const Navigation = () => {
       style={{ zIndex: 999 }}
       className={`${
         showSidebar ? "hidden" : "flex"
-      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between bg-black p-4 text-white w-[4%] hover:w-[15%] h-[100vh] fixed `}
+      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between bg-black p-4 text-[#F6F6F6] w-[10rem] hover:w-[15%] h-[100vh] fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
@@ -63,8 +63,8 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
           <AiOutlineHome size={26} className="mt-[3rem] " />
-          <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-            HOME
+          <span className="hidden nav-item-name text-base font-medium  mt-[3rem] ml-4">
+            Home
           </span>
         </Link>
         <Link
@@ -72,8 +72,8 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
           <AiOutlineShopping size={26} className="mt-[3rem] " />
-          <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-            SHOP
+          <span className="hidden nav-item-name text-base font-medium text-[#F6F6F6] mt-[3rem] ml-4">
+            Shop
           </span>
         </Link>
         <Link
@@ -81,17 +81,17 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:translate-x-2 "
         >
           <AiOutlineShoppingCart size={26} className="mt-[3rem] " />
-          <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-            CART
+          <span className="hidden nav-item-name text-base font-medium text-[#F6F6F6] mt-[3rem] ml-4">
+            Cart
           </span>
         </Link>
         <Link
           to="/favorite"
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
-          <FaHeart size={26} className="mt-[3rem] " />{" "}
-          <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-            FAVORITE
+          <FaHeart size={26} className="mt-[3rem]" />{" "}
+          <span className="hidden nav-item-name text-base font-medium text-[#F6F6F6] mt-[3rem] ml-4">
+            Favorite
           </span>
         </Link>
       </div>
@@ -102,7 +102,9 @@ const Navigation = () => {
           className="flex items-center text-gray-800 focus:outline-none"
         >
           {userInfo ? (
-            <span className="text-white">{userInfo.username}</span>
+            <span className="text-base font-medium text-[#F6F6F6] capitalize">
+              {userInfo.username}
+            </span>
           ) : (
             <></>
           )}

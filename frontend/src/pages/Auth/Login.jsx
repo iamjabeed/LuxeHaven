@@ -7,10 +7,14 @@ import { setCredentials } from "../../redux/features/auth/authSlice";
 import { useLoginMutation } from "../../redux/api/usersApislice";
 
 import Loader from "../../components/Loader.jsx";
+import { HiOutlineMail } from "react-icons/hi";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { BiHide, BiShowAlt } from "react-icons/bi";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isVisiblePass, setIsVisiblePass] = useState(false);
 
   // Define a login mutation function and check if it's loading
   const [login, { isLoading }] = useLoginMutation();
@@ -49,8 +53,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <section className="flex justify-around items-center flex-wrap gap-8 border border-red-700 h-[100vh] w-full">
+    <div className="">
+      <section className="px-4 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-gray-500 overflow-hidden">
         {/* bg-[#2F3349] */}
         {/* <img
           src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
@@ -58,65 +62,94 @@ const Login = () => {
           className="h-[100vh] w-[30%] xl:block md:hidden sm:hidden rounded-lg"
         /> */}
         {/* <div id="pattern" className="h-[80vh] w-[30%]"></div> */}
-        <div className="border border-yellow-700">
-          <h1 className="text-2xl font-semibold mb-4">Log In</h1>
-          <h1>Welcome to LuxeHaven! 👋🏻</h1>
-          <p>Enter Your information below to login</p>
+        <div className="text-[#eaeaeab9]">
+          <h1 className="text-3xl font-semibold mb-4 text-[#F6F6F6]">Log In</h1>
+          <h1 className="text-2xl font-medium mb-2">
+            Welcome to LuxeHaven! 👋🏻
+          </h1>
+          <p className="text-lg font-medium mb-4">
+            Please sign-in to your account and start the adventure
+          </p>
 
-          <form onSubmit={submitHandler} className="container w-[40rem]">
-            <div className="my-[2rem]">
+          <form onSubmit={submitHandler} className="container w-[33rem]">
+            <div className="">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-white"
+                className="flex items-center gap-3 text-lg font-medium mb-2 "
               >
-                Email Address
+                <HiOutlineMail size={26} className="text-[#08D9D6]" />
+                <span>Email</span>
               </label>
+
               <input
                 type="email"
                 id="email"
-                className="mt-1 p-2 border rounded w-full"
+                className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#cececec3]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autocomplete="off"
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-2">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-white"
+                className="flex items-center gap-3 text-lg font-medium mb-2 "
               >
+                <RiLockPasswordLine size={26} className="text-[#08D9D6]" />
                 Password
               </label>
-              <input
-                type="password"
+              {/* <input
+                type={`isVisiblePass?"text"  :  "password"`}
                 id="password"
-                className="mt-1 p-2 border rounded w-full"
+                className="mt-1 p-2 border rounded w-[440px] mb-4 bg-[#0F0F10] placeholder-[#cececec3] text-[#cfcccc] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <BiHide /> */}
+              <div className="relative">
+                <input
+                  type={isVisiblePass ? "text" : "password"}
+                  id="password"
+                  className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#cececec3] text-[#cfcccc] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <span
+                  className="absolute top-[15px] left-[24rem] cursor-pointer"
+                  onClick={() => setIsVisiblePass(!isVisiblePass)}
+                >
+                  {isVisiblePass ? (
+                    <BiShowAlt size={20} />
+                  ) : (
+                    <BiHide size={20} />
+                  )}
+                </span>
+              </div>
             </div>
 
             <button
               disabled={isLoading}
               type="submit"
-              className="bg-[#F4CE14] text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
+              className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[480px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
             >
-              {isLoading ? "Signing In..." : "Sign In"}
+              {isLoading ? "Signing In..." : "Login"}
             </button>
 
             {isLoading && <Loader />}
           </form>
 
           <div className="mt-4">
-            <p className="text-white">
+            <p className="text-lg">
               New Customer?{" "}
               <Link
                 to={redirect ? `/register?redirect=${redirect}` : "/register"}
-                className="text-pink-500 hover:underline"
+                className="text-[#7367F0] hover:underline shadow-2xl shadow-white"
               >
-                Register
+                Create an account
               </Link>
             </p>
           </div>

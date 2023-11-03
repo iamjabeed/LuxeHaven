@@ -43,7 +43,7 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (email.trim() === "" || password.trim() === "") {
-      toast.error("Please enter valid credentials!");
+      toast.error("Please fill all the fields");
       return;
     }
 
@@ -52,7 +52,7 @@ const Login = () => {
       console.log(res);
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
-      toast.success("Successfully Logged In!");
+      toast.success("User Successfully LoggedIn");
     } catch (err) {
       if (err instanceof Error) {
         // Handle errors here
@@ -67,11 +67,7 @@ const Login = () => {
     <div className="">
       <section className="px-4 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-gray-500 overflow-hidden">
         {/* bg-[#2F3349] */}
-        {/* <img
-          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
-          alt=""
-          className="h-[100vh] w-[30%] xl:block md:hidden sm:hidden rounded-lg"
-        /> */}
+
         {/* <div id="pattern" className="h-[80vh] w-[30%]"></div> */}
         <div className="text-[#eaeaeab9]">
           <h1 className="text-3xl font-semibold mb-4 text-[#F6F6F6]">Log In</h1>
@@ -96,7 +92,7 @@ const Login = () => {
                 type="email"
                 id="email"
                 className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-                placeholder="Enter email"
+                placeholder="jhon.doe@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="off"
@@ -116,7 +112,7 @@ const Login = () => {
                   type={isVisiblePass ? "text" : "password"}
                   id="password"
                   className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
-                  placeholder="Enter password"
+                  placeholder="********"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />

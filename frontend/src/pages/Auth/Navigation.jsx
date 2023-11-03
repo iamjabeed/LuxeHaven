@@ -23,7 +23,6 @@ const Navigation = () => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-    document.addEventListener("onclick", () => setDropdownOpen(!dropdownOpen));
   };
 
   const toggleSidebar = () => {
@@ -44,6 +43,7 @@ const Navigation = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      toast.success("User successfully Logged out");
       navigate("/login");
     } catch (err) {
       console.error(err);

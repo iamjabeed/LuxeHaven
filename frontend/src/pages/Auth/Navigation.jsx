@@ -12,7 +12,7 @@ import "./Navigation.css";
 import { FaHeart } from "react-icons/fa";
 
 import { useSelector, useDispatch } from "react-redux";
-import { useLoginMutation } from "../../redux/api/usersApislice.js";
+import { useLogoutMutation } from "../../redux/api/usersApislice.js";
 import { logout } from "../../redux/features/auth/authSlice";
 
 const Navigation = () => {
@@ -23,6 +23,7 @@ const Navigation = () => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+    document.addEventListener("onclick", () => setDropdownOpen(!dropdownOpen));
   };
 
   const toggleSidebar = () => {
@@ -37,17 +38,17 @@ const Navigation = () => {
 
   const navigate = useNavigate();
 
-  // const [logoutApiCall] = useLogoutMutation();
+  const [logoutApiCall] = useLogoutMutation();
 
-  // const logoutHandler = async () => {
-  //   try {
-  //     await logoutApiCall().unwrap();
-  //     dispatch(logout());
-  //     navigate("/login");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div
@@ -127,31 +128,101 @@ const Navigation = () => {
             </svg>
           )}
         </button>
+
+        {dropdownOpen && userInfo && (
+          <ul
+            className={`absolute right-[-40px]  mt-2 mr-14 space-y-2 bg-gray-200 text-gray-600 ${
+              !userInfo.isAdmin ? "-top-20" : "-top-80"
+            } `}
+          >
+            {userInfo.isAdmin && (
+              <>
+                <li>
+                  <Link
+                    to="/admin/dashboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/productlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/categorylist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Category
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/orderlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/admin/userlist"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Users
+                  </Link>
+                </li>
+              </>
+            )}
+
+            <li>
+              <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={logoutHandler}
+                className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
-      <ul>
-        <li>
-          <Link
-            to="/login"
-            className="flex items-center transition-transform transform hover:translate-x-2"
-          >
-            <AiOutlineLogin size={26} className="mt-[3rem] " />{" "}
-            <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-              Login
-            </span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/register"
-            className="flex items-center transition-transform transform hover:translate-x-2"
-          >
-            <AiOutlineUserAdd size={26} className="mt-[3rem] " />{" "}
-            <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
-              Register
-            </span>
-          </Link>
-        </li>
-      </ul>
+
+      {!userInfo && (
+        <ul>
+          <li>
+            <Link
+              to="/login"
+              className="flex items-center transition-transform transform hover:translate-x-2"
+            >
+              <AiOutlineLogin size={26} className="mt-[3rem] " />{" "}
+              <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
+                Login
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/register"
+              className="flex items-center transition-transform transform hover:translate-x-2"
+            >
+              <AiOutlineUserAdd size={26} className="mt-[3rem] " />{" "}
+              <span className="hidden nav-item-name text-base font-medium text-gray-400 mt-[3rem] ml-4">
+                Register
+              </span>
+            </Link>
+          </li>
+        </ul>
+      )}
     </div>
 
     /* <div

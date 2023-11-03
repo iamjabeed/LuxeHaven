@@ -11,8 +11,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
       // Define how to make a request for the "login" endpoint
       query: (data) => ({
         url: `${USERS_URL}/auth`, // The URL for user authentication
-        method: "POST", // Using the HTTP POST method
+        method: "POST",
         body: data, // Send some data (like a username and password)
+      }),
+    }),
+    logout: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/logout`,
+        method: "POST",
       }),
     }),
   }),
@@ -22,4 +28,4 @@ export const userApiSlice = apiSlice.injectEndpoints({
 // This function can be used to perform user logins
 // It will be called useLoginMutation
 //`use${login}Mutation`
-export const { useLoginMutation } = userApiSlice;
+export const { useLoginMutation, useLogoutMutation } = userApiSlice;

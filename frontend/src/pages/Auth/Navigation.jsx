@@ -44,6 +44,7 @@ const Navigation = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      setDropdownOpen(false);
       toast.success("User successfully Logged out");
       navigate("/login");
     } catch (err) {
@@ -137,6 +138,7 @@ const Navigation = () => {
             className={`absolute right-[-10px] mt-2  space-y-2 bg-[#db1143f3] text-[#ffffff] rounded-md ${
               !userInfo.isAdmin ? "-top-20" : "-top-80"
             } `}
+            onClick={() => setDropdownOpen(false)}
           >
             {userInfo.isAdmin && (
               <>

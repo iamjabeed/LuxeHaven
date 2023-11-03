@@ -23,6 +23,7 @@ const Navigation = () => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+    // console.log(dropdownOpen);
   };
 
   const toggleSidebar = () => {
@@ -97,7 +98,7 @@ const Navigation = () => {
         </Link>
       </div>
       {/* <-----------Login User Account details----------> */}
-      <div className="relative">
+      <div className="relative mb-4">
         <button
           onClick={toggleDropdown}
           className="flex items-center text-gray-800 focus:outline-none"
@@ -112,9 +113,11 @@ const Navigation = () => {
           {userInfo && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-1 ${
-                dropdownOpen ? "transform rotate-180" : ""
-              }`}
+              className={`h-5 w-5 ml-1`}
+              style={{
+                transform: dropdownOpen ? "rotate(360deg)" : "rotate(0deg)",
+                transition: "transform 0.3s ease-in-out",
+              }}
               fill="none"
               viewBox="0 0 24 24"
               stroke="white"

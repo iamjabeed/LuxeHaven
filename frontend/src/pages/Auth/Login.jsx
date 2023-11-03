@@ -49,7 +49,7 @@ const Login = () => {
 
     try {
       const res = await login({ email, password }).unwrap();
-      console.log(res);
+      // console.log(res);
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
       toast.success("User Successfully LoggedIn");

@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApislice.js";
 import { logout } from "../../redux/features/auth/authSlice";
 
+import Logo from "../../assets/logo.png";
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
   // console.log(userInfo);
@@ -61,6 +62,12 @@ const Navigation = () => {
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
+        {/* <Link
+          to="/"
+          className="flex items-center transition-transform transform hover:translate-x-2"
+        >
+          <img src={Logo} alt="Logo" />
+        </Link> */}
         <Link
           to="/"
           className="flex items-center transition-transform transform hover:translate-x-2"

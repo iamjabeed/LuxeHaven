@@ -94,12 +94,14 @@ const CategoryList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center md:flex-row">
+    <div className="flex flex-col justify-center items-center md:flex-row pl-10 pt-10">
       <div className="md:w-3/4 p-3">
-        <h1 className="text-3xl font-semibold mb-4 text-[#F6F6F6]">
+        <h1 className="text-xl md:text-3xl font-semibold mb-4 text-[#F6F6F6]">
           Welcome to LuxeHaven! 👋🏻
         </h1>
-        <h1 className="text-2xl font-medium mb-2">Manage Categories</h1>
+        <h1 className="text-xl md:text-2xl font-medium mb-2">
+          Manage Categories
+        </h1>
         <CategoryForm
           value={name}
           setValue={setName}
@@ -107,7 +109,9 @@ const CategoryList = () => {
         />
         <br />
         {/* <hr /> */}
-        <h1 className="text-2xl font-medium mb-2 ">All Categories :</h1>
+        <h1 className="text-xl md:text-2xl font-medium mb-2 ">
+          All Categories :
+        </h1>
         <div className="flex flex-wrap">
           {categories?.map((category) => (
             <div key={category._id}>

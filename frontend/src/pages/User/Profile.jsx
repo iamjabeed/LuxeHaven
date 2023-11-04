@@ -54,8 +54,13 @@ const Profile = () => {
   return (
     <div className="">
       <div className="px-4 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-gray-500 overflow-hidden">
-        <form onSubmit={submitHandler} className="container w-[33rem]">
-          <h2 className="text-2xl font-medium mb-2">Update Profile</h2>
+        <form
+          onSubmit={submitHandler}
+          className="container w-[21rem] md:w-[33rem] 2xl:w-[36rem]"
+        >
+          <h2 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2">
+            Update Profile
+          </h2>
           <div>
             <label className="flex items-center gap-3 text-lg font-medium mb-2 ">
               Name
@@ -63,7 +68,7 @@ const Profile = () => {
             <input
               type="text"
               placeholder="Enter name"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               autoComplete="off"
@@ -77,7 +82,7 @@ const Profile = () => {
             <input
               type="email"
               placeholder="Enter email"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="off"
@@ -91,7 +96,7 @@ const Profile = () => {
             <input
               type="password"
               placeholder="Enter password"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="off"
@@ -105,13 +110,13 @@ const Profile = () => {
             <input
               type="password"
               placeholder="Confirm password"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 
-          <div className="flex justify-between items-center gap-3 w-[480px]">
+          <div className="flex justify-between items-center gap-3 w-[320px] md:w-[460px] 2xl:w-[520px]">
             <button className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[45%] px-4 py-2 rounded cursor-pointer text-base font-semibold">
               <Link to="/user-orders">My Orders</Link>
             </button>

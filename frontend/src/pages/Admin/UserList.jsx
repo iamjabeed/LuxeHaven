@@ -58,7 +58,7 @@ const UserList = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-8 flex items-center justify-center uppercase border-b-2 mx-[40%] text-[#FFF]">
+      <h1 className="md:text-2xl font-semibold mb-8 flex items-center justify-center uppercase md:border-b-2 md:mx-[40%] text-[#FFF]">
         All Users
       </h1>
       {isLoading ? (
@@ -70,7 +70,7 @@ const UserList = () => {
       ) : (
         <div className="flex flex-col md:flex-row">
           {/* <AdminMenu /> */}
-          <table className="w-full md:w-4/5 mx-auto">
+          <table className="w-full md:w-4/5 mx-auto table-auto">
             <thead>
               <tr>
                 <th className="px-4 py-2 text-left">ID</th>

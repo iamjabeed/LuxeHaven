@@ -55,12 +55,19 @@ const Register = () => {
   };
 
   return (
-    <section className="px-4 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-gray-500 overflow-hidden">
+    <section className="px-6 ml-2 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-[#eaeaea] overflow-hidden">
       <div className="text-[#eaeaeab9]">
-        <h1 className="text-3xl font-semibold mb-4 text-[#F6F6F6]">Register</h1>
-        <h1 className="text-2xl font-medium mb-2">Welcome to LuxeHaven! 👋🏻</h1>
+        <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
+          Register
+        </h1>
+        <h1 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2">
+          Welcome to LuxeHaven! 👋🏻
+        </h1>
 
-        <form onSubmit={submitHandler} className="container w-[40rem]">
+        <form
+          onSubmit={submitHandler}
+          className="container w-[21rem] md:w-[33rem] 2xl:w-[36rem]"
+        >
           <div className="">
             <label
               htmlFor="name"
@@ -71,7 +78,7 @@ const Register = () => {
             <input
               type="text"
               id="name"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="John Doe"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -90,7 +97,7 @@ const Register = () => {
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="jhon.doe@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -109,13 +116,13 @@ const Register = () => {
             <input
               type={isVisiblePass ? "text" : "password"}
               id="password"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <span
-              className="absolute bottom-[25px] left-[28rem] cursor-pointer"
+              className="absolute right-8 top-12 md:bottom-0 md:right-24 cursor-pointer"
               onClick={() => setIsVisiblePass(!isVisiblePass)}
             >
               {isVisiblePass ? <BiShowAlt size={20} /> : <BiHide size={20} />}
@@ -133,13 +140,13 @@ const Register = () => {
             <input
               type={isVisiblePass ? "text" : "password"}
               id="confirmPassword"
-              className="mt-1 p-2 border rounded w-[480px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="********"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <span
-              className="absolute bottom-[25px] left-[28rem] cursor-pointer"
+              className="absolute right-8 top-12 md:bottom-0 md:right-24 cursor-pointer"
               onClick={() => setIsVisiblePass(!isVisiblePass)}
             >
               {isVisiblePass ? <BiShowAlt size={20} /> : <BiHide size={20} />}
@@ -149,7 +156,7 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[480px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
+            className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>

@@ -15,6 +15,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApislice.js";
 import { logout } from "../../redux/features/auth/authSlice";
 
+import { toast } from "react-toastify";
+
 import Logo from "../../assets/logo.png";
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -58,7 +60,7 @@ const Navigation = () => {
       style={{ zIndex: 999 }}
       className={`${
         showSidebar ? "hidden" : "flex"
-      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between bg-black p-4 text-[#F6F6F6] w-[10rem] hover:w-[15%] h-[100vh] fixed `}
+      } hidden md:flex xl:flex lg:flex flex-col justify-between bg-black p-4 text-[#F6F6F6] w-[10rem] hover:w-[15%] h-[100vh] fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">

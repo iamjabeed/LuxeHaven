@@ -15,6 +15,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisiblePass, setIsVisiblePass] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Define a login mutation function and check if it's loading
   const [login, { isLoading, error, data }] = useLoginMutation();
@@ -37,6 +38,7 @@ const Login = () => {
   useEffect(() => {
     if (userInfo) {
       navigate(redirect);
+      // setLoading(isLoading);
     }
   }, [navigate, userInfo, redirect]);
 
@@ -51,12 +53,12 @@ const Login = () => {
       const res = await login({ email, password }).unwrap();
       // console.log(res);
       dispatch(setCredentials({ ...res }));
-      isLoading = false;
+      //  setLoading(false);
       navigate(redirect);
       toast.success("User Successfully LoggedIn");
     } catch (err) {
       if (err instanceof Error) {
-        isLoading = false;
+        // setLoading(false);
         // Handle errors here
         toast.error(err.message);
       } else {

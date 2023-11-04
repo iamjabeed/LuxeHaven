@@ -51,10 +51,12 @@ const Login = () => {
       const res = await login({ email, password }).unwrap();
       // console.log(res);
       dispatch(setCredentials({ ...res }));
+      isLoading = false;
       navigate(redirect);
       toast.success("User Successfully LoggedIn");
     } catch (err) {
       if (err instanceof Error) {
+        isLoading = false;
         // Handle errors here
         toast.error(err.message);
       } else {

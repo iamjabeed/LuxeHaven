@@ -27,7 +27,7 @@ app.use(cookieParser());
 // });
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/category", categoryRoutes);
-app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/products", productRoutes);
 
 console.clear();
 

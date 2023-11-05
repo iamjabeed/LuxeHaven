@@ -17,13 +17,14 @@ This requirement document outlines the features and tech stacks for the developm
 
 ### 2.1 User Authentication and Account Management
 
-- User registration with email and social media options.
-- Secure login using email and password or social media accounts.
+- User registration with email.
+- User registration with social media options(v2).
+- Secure login using email and password.
 - Logout functionality for user account security.
 
 ### 2.2 User Profile Management
 
-- Users can edit their profiles, including name, email, profile picture, and contact information.
+- Users can edit their profiles, including name, email, profile picture(v2), and contact information(v2).
 - Ability for users to change their login password.
 - Detailed order history for users to track and re-order items.
 - Wishlist feature for users to create, edit, and manage a list of desired products.
@@ -35,35 +36,30 @@ This requirement document outlines the features and tech stacks for the developm
 - User-friendly shopping cart with the capability to add, remove, and modify items.
 - Streamlined and secure checkout process with multiple payment options.
 - Integration with RazorPay for seamless and secure transactions.
-- Automated order confirmation emails and SMS notifications with tracking details.
+- Automated order confirmation emails and SMS notifications with tracking details(v2).
 - The ability for users to leave detailed reviews and ratings for products.
-- Product comparison functionality to assist users in making informed purchase decisions.
+- Product comparison functionality to assist users in making informed purchase decisions(v2).
 
 ### 2.4 Search and Navigation
 
 - A powerful search engine to quickly find products.
 - Advanced filtering and sorting options based on categories, prices, brands, and customer ratings.
 - Featured and best-selling product showcase.
-- "Recently Viewed Items" feature to allow users to revisit previously viewed products.
+- "Recently Viewed Items" feature to allow users to revisit previously viewed products(v2).
 
-### 2.5 Customer Support and Communication
+### 2.5 Customer Support and Communication(v2)
 
 - Real-time live chat support for user inquiries and assistance.
 - Automated email notifications for order updates, promotions, and personalized recommendations.
 - A comprehensive help center with FAQs, tutorials, and troubleshooting guides.
 - User-friendly returns and refunds process.
 
-### 2.6 User Engagement
+### 2.6 User Engagement(v2)
 
 - Newsletters and subscription options for users to receive updates and promotions.
 - Utilization of AI-driven recommendations to suggest products tailored to individual user preferences.
 - User reviews and ratings feature for contributions to product and seller reviews.
 - Social sharing capability to enable users to share product links on social media platforms.
-
-### 2.7 Security and Privacy
-
-- Implementation of SSL encryption and additional security measures for payment processing.
-- Strict adherence to data privacy regulations and user data protection.
 
 ## 3. Requirements
 
@@ -98,7 +94,7 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
   - Featured and best-selling products.
   - Recently viewed items.
 
-- **Customer Support and Communication**:
+- **Customer Support and Communication(v2)**:
 
   - Real-time chat support.
   - Automated email notifications.
@@ -107,10 +103,10 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
 
 - **User Engagement**:
 
-  - Newsletters and subscriptions.
-  - AI-driven product recommendations.
+  - Newsletters and subscriptions(v2).
+  - AI-driven product recommendations(v2).
   - User reviews and ratings.
-  - Social sharing.
+  - Social sharing(v2).
 
 - **Security and Privacy**:
   - Secure payment processing.
@@ -131,7 +127,7 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
 - **React**: Frontend built with React for responsive and dynamic user interfaces.
 - **React Router**: For managing routes and navigation.
 - **Redux Toolkit**: State management and optimization.
-- **Axios**: For making API requests to the backend.
+- **RTK Query**: For making API requests to the backend.
 - **RazorPay Integration**: Handling secure payments.
 - **ApexCharts**: Creating stunning charts and analytics.
 - **TailwindCSS**: Styling and layout.

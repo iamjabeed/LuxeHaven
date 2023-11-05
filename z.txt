@@ -1,8 +1,0 @@
-
-    "animate.css": "^4.1.1",
-    "react-swipeable": "^7.0.1",
-    "swiper-react": "^1.0.0",
-    "sweetalert2": "^11.7.23",
-    "google-map-react": "^2.2.1",
-    "swiper": "^10.1.0",
-    

@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import AdminMenu from "./AdminMenu";
+import { useEffect } from "react";
 
 const AllProducts = () => {
-  const { data: products, isLoading, isError } = useAllProductsQuery();
+  const { data: products, isLoading, isError, refetch } = useAllProductsQuery();
+
+  useEffect(() => {
+    refetch();
+  }, [products]);
 
   if (isLoading) {
     return <div>Loading...</div>;

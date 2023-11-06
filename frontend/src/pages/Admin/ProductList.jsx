@@ -23,6 +23,34 @@ const ProductList = () => {
   const [createProduct] = useCreateProductMutation();
   const { data: categories } = useFetchCategoriesQuery();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const productData = new FormData();
+      productData.append("image", image);
+      productData.append("name", name);
+      productData.append("description", description);
+      productData.append("price", price);
+      productData.append("category", category);
+      productData.append("quantity", quantity);
+      productData.append("brand", brand);
+      productData.append("countInStock", stock);
+
+      const { data } = await createProduct(productData);
+
+      if (data.error) {
+        toast.error("Product create failed. Try Again.");
+      } else {
+        toast.success(`${data.name} is created`);
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Product create failed. Try Again.");
+    }
+  };
+
   const uploadFileHandler = async (e) => {
     const formData = new FormData();
     // console.log(e.target.files[0]);
@@ -43,9 +71,9 @@ const ProductList = () => {
       <div className="flex flex-col justify-center items-center">
         {/* <AdminMenu /> */}
         <div className="flex flex-col ">
-          <div className="mb-[2rem]">
+          <div className="mb-[1rem]">
             <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
-              Create Product👇
+              Create Product
             </h1>
           </div>
 
@@ -54,15 +82,15 @@ const ProductList = () => {
               <img
                 src={imageUrl}
                 alt="product"
-                className="block h-[200px] 2xl:h-[300px] w-[320px] md:w-[460px] xl:w-[98%] max-w-full object-contain object-center rounded-lg shadow-lg mb-4"
+                className="block max-h-[200px] w-[320px] md:w-[460px] xl:w-[98%] max-w-full object-contain object-center rounded-lg shadow-lg mb-4"
               />
             </div>
           )}
 
-          <div className="mb-3 ml-2">
+          <div className="mb-1 ml-2">
             <label
               className="border rounded border-[#57575b] xl:px-4 block w-[320px] 
-            md:w-[460px] xl:w-[98%] text-center cursor-pointer py-4 text-base 2xl:text-xl font-semibold mb-4 text-[#F6F6F6] overflow-hidden"
+            md:w-[460px] xl:w-[98%] text-center cursor-pointer py-4 text-base 2xl:text-xl font-semibold mb-1 text-[#F6F6F6] overflow-hidden"
             >
               {image ? image.name : "Upload Image"}
 
@@ -71,7 +99,9 @@ const ProductList = () => {
                 name="image"
                 accept="image/*"
                 onChange={uploadFileHandler}
-                className={`!image ? "hidden" : " " ml-6 mt-1 p-2 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
+                className={`${
+                  !image ? "hidden" : " "
+                } ml-6 mt-1 p-2 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
               />
             </label>
           </div>
@@ -118,11 +148,11 @@ const ProductList = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1 lg:gap-6">
+            <div className="flex flex-col gap-1">
               <label htmlFor="">Description</label>
               <textarea
                 type="text"
-                className="mt-1 p-2 border rounded  mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63] w-[320px] md:w-[460px] xl:w-[98%]"
+                className="mt-1 p-2 border rounded  mb-1 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63] w-[320px] md:w-[460px] xl:w-[100%]"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -157,10 +187,10 @@ const ProductList = () => {
             </div>
             <div className="xl:flex xl:justify-center xl:items-center">
               <button
-                // onClick={handleSubmit}
+                onClick={handleSubmit}
                 className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[100%] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
               >
-                Submit
+                Create
               </button>
             </div>
           </div>

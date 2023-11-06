@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import {
   useCreateProductMutation,
   useUploadProductImageMutation,
-} from "../../redux/api/productApiSlice";
+} from "../../redux/api/productApiSlice.js";
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import AdminMenu from "./AdminMenu";
 const ProductList = () => {

@@ -22,14 +22,30 @@ const ProductList = () => {
   const [uploadProductImage] = useUploadProductImageMutation();
   const [createProduct] = useCreateProductMutation();
   const { data: categories } = useFetchCategoriesQuery();
+
+  const uploadFileHandler = async (e) => {
+    const formData = new FormData();
+    // console.log(e.target.files[0]);
+    formData.append("image", e.target.files[0]);
+
+    try {
+      const res = await uploadProductImage(formData).unwrap();
+      toast.success(res.message);
+      setImage(res.image);
+      setImageUrl(res.image);
+    } catch (error) {
+      toast.error(error?.data?.message || error.error);
+    }
+  };
+
   return (
     <div className="grid place-content-center items-center text-[#eaeaea] py-5 pl-6  sm:pl-[20%] xl:pl-0">
       <div className="flex flex-col justify-center items-center">
         {/* <AdminMenu /> */}
         <div className="flex flex-col ">
-          <div className="">
+          <div className="mb-[2rem]">
             <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
-              Create Product
+              Create Product👇
             </h1>
           </div>
 
@@ -38,15 +54,15 @@ const ProductList = () => {
               <img
                 src={imageUrl}
                 alt="product"
-                className="block mx-auto max-h-[200px]"
+                className="block h-[200px] 2xl:h-[300px] w-[320px] md:w-[460px] xl:w-[98%] max-w-full object-contain object-center rounded-lg shadow-lg mb-4"
               />
             </div>
           )}
 
           <div className="mb-3 ml-2">
             <label
-              className="border rounded border-[#57575b] text-[#F6F6F6] px-4 block w-[320px] 
-            md:w-[460px] xl:w-[98%] text-center cursor-pointer font-bold py-4"
+              className="border rounded border-[#57575b] xl:px-4 block w-[320px] 
+            md:w-[460px] xl:w-[98%] text-center cursor-pointer py-4 text-base 2xl:text-xl font-semibold mb-4 text-[#F6F6F6] overflow-hidden"
             >
               {image ? image.name : "Upload Image"}
 
@@ -54,8 +70,8 @@ const ProductList = () => {
                 type="file"
                 name="image"
                 accept="image/*"
-                // onChange={uploadFileHandler}
-                className={`!image ? "hidden" : "text-white" ml-6 mt-1 p-2 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-none `}
+                onChange={uploadFileHandler}
+                className={`!image ? "hidden" : " " ml-6 mt-1 p-2 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
               />
             </label>
           </div>

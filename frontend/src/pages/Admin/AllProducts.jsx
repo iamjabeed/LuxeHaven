@@ -5,11 +5,11 @@ import AdminMenu from "./AdminMenu";
 import { useEffect } from "react";
 
 const AllProducts = () => {
-  const { data: products, isLoading, isError, refetch } = useAllProductsQuery();
+  const { data: products, isLoading, isError } = useAllProductsQuery();
 
-  useEffect(() => {
-    refetch();
-  }, [products]);
+  // const handleRefetch = () => {
+  //   refetch();
+  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -21,24 +21,25 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="container mx-[9rem]">
-        <div className="flex flex-col  md:flex-row">
+      <div className="container mx-auto">
+        <div className="">
           <div className="p-3">
-            <div className="ml-[2rem] text-xl font-bold h-12">
+            <div className="text-center text-xl font-bold h-12">
               All Products ({products.length})
             </div>
-            <div className="flex flex-wrap justify-around items-center">
+            <div className="flex flex-wrap justify-around items-center gap-6 flex-col mt-[2rem]">
               {products.map((product) => (
-                <Link
+                <div key={product._id} className="w-full px-4">
+                  {/* <Link
                   key={product._id}
                   to={`/admin/product/update/${product._id}`}
                   className="block mb-4 overflow-hidden"
-                >
-                  <div className="flex">
+                > */}
+                  <div className="flex justify-center flex-col md:flex-row">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-[10rem] object-cover"
+                      className="w-[10rem] object-contain object-center"
                     />
                     <div className="p-4 flex flex-col justify-around">
                       <div className="flex justify-between">
@@ -58,7 +59,7 @@ const AllProducts = () => {
                       <div className="flex justify-between">
                         <Link
                           to={`/admin/product/update/${product._id}`}
-                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#db1143f3] rounded border-none outline-none hover:bg-[#FF2E63]"
                         >
                           Update Product
                           <svg
@@ -81,10 +82,12 @@ const AllProducts = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
+                  {/* </Link> */}
+                </div>
               ))}
             </div>
           </div>
+
           <div className="md:w-1/4 p-3 mt-2">
             <AdminMenu />
           </div>

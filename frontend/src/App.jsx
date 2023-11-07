@@ -2,14 +2,17 @@ import { Outlet } from "react-router-dom";
 import Navigation from "./pages/Auth/Navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ContentWrapper from "./components/ContentWrapper";
 
 function App() {
   return (
     <>
       <ToastContainer />
       <Navigation />
-      <main className="">
+      <main className="mt-[80px] contentWrapper">
+        {/* <ContentWrapper> */}
         <Outlet />
+        {/* </ContentWrapper> */}
       </main>
     </>
   );

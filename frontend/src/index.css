@@ -8,9 +8,12 @@ body {
   overflow-x: hidden;
 }
 
-input,
+/* input,
 textarea {
   color: #000;
+} */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* color palettes */

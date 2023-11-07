@@ -70,7 +70,7 @@ const ProductList = () => {
   return (
     <div className="grid place-content-center items-center text-[#eaeaea] py-5 pl-6  sm:pl-[20%] xl:pl-0">
       <div className="flex flex-col justify-center items-center">
-        <AdminMenu />
+        {/* <AdminMenu /> */}
         <div className="flex flex-col ">
           <div className="mb-[1rem]">
             <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">

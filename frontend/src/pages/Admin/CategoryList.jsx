@@ -96,7 +96,7 @@ const CategoryList = () => {
 
   return (
     <div className="flex flex-col justify-center items-center md:flex-row pl-10 pt-10">
-      <AdminMenu />
+      {/* <AdminMenu /> */}
       <div className="md:w-3/4 p-3">
         <h1 className="text-xl md:text-3xl font-semibold mb-4 text-[#F6F6F6]">
           Welcome to LuxeHaven! 👋🏻

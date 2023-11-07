@@ -259,6 +259,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { FaHeart } from "react-icons/fa";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApislice.js";
@@ -320,10 +321,10 @@ const Navigation = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[80px] bg-black p-4 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300">
+    <div className="fixed top-0 left-0 w-full h-[80px] bg-black p-4 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center">
       <ContentWrapper>
         <div className="flex justify-between items-center">
-          <div className="flex justify-between items-center px-3 w-full">
+          <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-4">
               <button
                 className={`p-2 rounded-lg flex md:hidden`}
@@ -342,7 +343,7 @@ const Navigation = () => {
                 LOGO
               </Link>
             </div>
-            <div className="hidden md:flex xl:flex lg:flex justify-center gap-8 items-center">
+            <div className="hidden pl-0 md:pl-[15%] md:flex xl:flex lg:flex justify-center gap-8 items-center">
               <Link to="/" className="flex items-center">
                 <AiOutlineHome size={26} className="mt-3" />
                 {/* <span className="text-base font-medium mt-3 ml-2">Home</span> */}
@@ -360,7 +361,7 @@ const Navigation = () => {
                 </span> */}
               </Link>
               <Link to="/favorite" className="flex items-center">
-                <FaHeart size={26} className="mt-3" />
+                <MdOutlineFavoriteBorder size={26} className="mt-3" />
                 {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Favorite
                 </span> */}
@@ -416,9 +417,7 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute right-8 top-[80px] mt-2 bg-[#db1143f3] text-[#ffffff] rounded-md ${
-                    !userInfo.isAdmin ? "top-5" : "top-5"
-                  }`}
+                  className={`absolute bg-[#db1143f3] text-[#ffffff] rounded-md right-16 top-[80px] border`}
                   onClick={() => setDropdownOpen(false)}
                 >
                   {userInfo.isAdmin && (
@@ -489,25 +488,19 @@ const Navigation = () => {
             {!userInfo && (
               <ul className="flex justify-between items-center gap-4">
                 <li>
-                  <Link
-                    to="/login"
-                    className="flex items-center transition-transform transform hover:translate-x-2"
-                  >
-                    <AiOutlineLogin size={26} className="mt-3" />
-                    <span className="text-base font-medium text-gray-400 mt-3 ml-4">
+                  <Link to="/login" className="flex items-center">
+                    <AiOutlineLogin size={26} className="" />
+                    {/* <span className="text-base font-medium text-gray-400  ml-4">
                       Login
-                    </span>
+                    </span> */}
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/register"
-                    className="flex items-center transition-transform transform hover:translate-x-2"
-                  >
-                    <AiOutlineUserAdd size={26} className="mt-3" />
-                    <span className="text-base font-medium text-gray-400 mt-3 ml-4">
+                  <Link to="/register" className="flex items-center">
+                    <AiOutlineUserAdd size={26} className="" />
+                    {/* <span className="text-base font-medium text-gray-400  ml-4">
                       Register
-                    </span>
+                    </span> */}
                   </Link>
                 </li>
               </ul>
@@ -528,7 +521,7 @@ const Navigation = () => {
               className="flex items-center transition-transform transform hover:translate-x-2"
             >
               <AiOutlineHome className="mr-2" size={26} />
-              <span className="">HOME</span>{" "}
+              <span className="">Home</span>{" "}
             </Link>
 
             <Link
@@ -536,7 +529,7 @@ const Navigation = () => {
               className="flex items-center transition-transform transform hover:translate-x-2"
             >
               <AiOutlineShopping className="mr-2" size={26} />
-              <span className="">SHOP</span>{" "}
+              <span className="">Shop</span>{" "}
             </Link>
 
             <Link to="/cart" className="flex relative">
@@ -558,7 +551,7 @@ const Navigation = () => {
 
             <Link to="/favorite" className="flex relative">
               <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-                <FaHeart className=" mr-2" size={20} />
+                <MdOutlineFavoriteBorder className=" mr-2" size={20} />
                 <span className="">Favorites</span> {/* <FavoritesCount /> */}
               </div>
             </Link>

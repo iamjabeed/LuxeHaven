@@ -24,10 +24,10 @@ const AllProducts = () => {
       <div className="container mx-auto">
         <div className="">
           <div className="p-3">
-            <div className="text-center text-xl font-bold h-12">
+            <div className="text-center text-xl md:text-2xl font-bold">
               All Products ({products.length})
             </div>
-            <div className="flex flex-wrap justify-around items-center gap-6 flex-col mt-[2rem]">
+            <div className="flex flex-wrap justify-around items-center gap-6 flex-col mt-[1rem]">
               {products.map((product) => (
                 <div key={product._id} className="w-full px-4">
                   {/* <Link
@@ -88,9 +88,9 @@ const AllProducts = () => {
             </div>
           </div>
 
-          <div className="md:w-1/4 p-3 mt-2">
+          {/* <div className="md:w-1/4 p-3 mt-2">
             <AdminMenu />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

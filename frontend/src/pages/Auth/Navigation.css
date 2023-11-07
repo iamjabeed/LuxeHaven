@@ -1,17 +1,16 @@
-#navigation-container {
+/* #navigation-container {
   width: 6rem;
   transition: width 0.3s ease-in-out;
-  overflow: hidden; /* Hide overflowing content during transition */
+  overflow: hidden; /
 }
 
 #navigation-container:hover {
   width: 15%;
 }
 
-/* Initially hide nav-item-name */
 .nav-item-name {
   display: none;
-  transition: opacity 0.2s ease-in-out; /* Add opacity transition */
+  transition: opacity 0.2s ease-in-out; 
 }
 
 #navigation-container:hover .nav-item-name {
@@ -22,7 +21,7 @@
 .search-input {
   display: none;
   opacity: 0;
-  transition: opacity 0.2s ease-in-out; /* Add opacity transition */
+  transition: opacity 0.2s ease-in-out; 
 }
 
 #navigation-container:hover .search-input {
@@ -32,14 +31,29 @@
 
 #navigation-container:hover .search-icon {
   display: none;
-  transition: opacity 0.2s ease-in-out; /* Add opacity transition */
+  transition: opacity 0.2s ease-in-out; 
+} */
+
+.mobile {
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  right: 0;
+  transition: all 0.35s ease;
+  animation: slideDown 0.4s ease forwards;
+}
+.desktop {
+  top: -500px;
+  transition: all 0.4s ease-out;
+  /* right: 0; */
 }
 
-#pattern {
-  --s: 100px; /* control the size */
-
-  --_g: #0000 90deg, #366 0;
-  background: conic-gradient(from 90deg at 2px 2px, var(--_g)),
-    conic-gradient(from 90deg at 1px 1px, var(--_g));
-  background-size: var(--s) var(--s), calc(var(--s) / 5) calc(var(--s) / 5);
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

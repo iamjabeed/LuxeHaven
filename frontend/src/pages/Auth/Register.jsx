@@ -55,12 +55,12 @@ const Register = () => {
   };
 
   return (
-    <section className="px-6 ml-2 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-[#eaeaea] overflow-hidden">
+    <section className="px-6 flex justify-around items-center flex-wrap gap-8  w-full text-[#eaeaea] overflow-hidden">
       <div className="text-[#eaeaeab9]">
-        <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
+        {/* <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
           Register
-        </h1>
-        <h1 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2">
+        </h1> */}
+        <h1 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2 mt-[5%]">
           Welcome to LuxeHaven! 👋🏻
         </h1>
 
@@ -156,7 +156,7 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold"
+            className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[320px] md:w-[460px] 2xl:w-[520px] px-4 py-2 rounded cursor-pointer text-base font-semibold"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
@@ -164,7 +164,7 @@ const Register = () => {
           {isLoading && <Loader />}
         </form>
 
-        <div className="mt-4">
+        <div className="mt-2">
           <p className="text-lg">
             Already have an account?{" "}
             <Link

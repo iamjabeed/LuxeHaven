@@ -69,7 +69,7 @@ const Login = () => {
 
   return (
     <div className="grid place-content-center items-center">
-      <section className="ml-2 px-6 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-[#eaeaea] overflow-hidden">
+      <section className="ml-2 px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#eaeaea] overflow-hidden pt-[8%]">
         {/* bg-[#2F3349] */}
 
         {/* <div id="pattern" className="h-[80vh] w-[30%]"></div> */}

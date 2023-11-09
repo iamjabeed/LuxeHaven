@@ -36,7 +36,7 @@ const AdminMenu = () => {
       </ContentWrapper>
       <ContentWrapper>
         {isMenuOpen && (
-          <section className="bg-[#000000] p-4 fixed right-14 top-16">
+          <section className="bg-[#000000] p-4 fixed top-[80px] right-6 2xl:right-[10%]">
             <ul className="list-none mt-2" onClick={toggleMenu}>
               <li>
                 <NavLink

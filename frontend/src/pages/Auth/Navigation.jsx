@@ -417,7 +417,7 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute bg-[#db1143f3] text-[#ffffff] rounded-md right-16 top-[80px] border`}
+                  className={`absolute bg-[#db1143f3] text-[#ffffff] rounded-md top-[80px] border`}
                   onClick={() => setDropdownOpen(false)}
                 >
                   {userInfo.isAdmin && (

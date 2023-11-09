@@ -1,6 +1,9 @@
+import { useGetTopProductsQuery } from "../redux/api/productApiSlice";
+
 import ProductCarousel from "../pages/Products/ProductCarousel";
 import SmallProduct from "../pages/Products/SmallProduct";
-import { useGetTopProductsQuery } from "../redux/api/productApiSlice";
+
+import BannerSlider from "./BannerSlider";
 import Loader from "./Loader";
 
 const Header = () => {
@@ -15,7 +18,8 @@ const Header = () => {
   }
   return (
     <>
-      <div className="flex justify-around gap-5">
+      <BannerSlider />
+      <div className="flex justify-between gap-5">
         <div className="xl:block lg:hidden md:hidden sm:hidden">
           <div className="grid grid-cols-2">
             {data?.map((product) => (

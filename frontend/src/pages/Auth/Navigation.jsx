@@ -340,10 +340,10 @@ const Navigation = () => {
               </button>
 
               <Link to="/" className=" md:flex items-center">
-                LOGO
+                <img src={Logo} className="w-[140px]" />
               </Link>
             </div>
-            <div className="hidden pl-0 md:pl-[15%] md:flex xl:flex lg:flex justify-center gap-8 items-center">
+            <div className="hidden md:flex xl:flex lg:flex justify-center gap-8 items-center">
               <Link to="/" className="flex items-center">
                 <AiOutlineHome size={26} className="mt-3" />
                 {/* <span className="text-base font-medium mt-3 ml-2">Home</span> */}

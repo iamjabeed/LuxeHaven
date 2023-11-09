@@ -35,7 +35,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[40rem]  lg:w-[30rem] md:w-[36rem] sm:w-[20rem] sm:block"
+          className="xl:w-[35rem]  lg:w-[30rem] md:w-[36rem] sm:w-[20rem] sm:block"
         >
           {products.map(
             ({
@@ -62,12 +62,12 @@ const ProductCarousel = () => {
                   <div className="one">
                     <h2>{name}</h2>
                     <p> $ {price}</p> <br /> <br />
-                    <p className="w-[25rem]">
+                    <p className="w-[15rem]">
                       {description.substring(0, 170)} ...
                     </p>
                   </div>
 
-                  <div className="flex justify-between w-[20rem]">
+                  <div className="flex justify-between w-[15rem]">
                     <div className="one">
                       <h1 className="flex items-center mb-6">
                         <FaStore className="mr-2 text-white" /> Brand: {brand}

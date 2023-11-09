@@ -9,7 +9,7 @@ function App() {
     <>
       <ToastContainer />
       <Navigation />
-      <main className="mt-[100px] contentWrapper border border-red-700">
+      <main className="mt-[100px] contentWrapper">
         {/* <ContentWrapper> */}
         <Outlet />
         {/* </ContentWrapper> */}

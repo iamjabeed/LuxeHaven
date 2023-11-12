@@ -272,6 +272,8 @@ import { toast } from "react-toastify";
 import Logo from "../../assets/logo.png";
 import AdminMenu from "../Admin/AdminMenu.jsx";
 
+import FavoritesCount from "../Products/FavoritesCount.jsx";
+
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -365,6 +367,7 @@ const Navigation = () => {
                 {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Favorite
                 </span> */}
+                <FavoritesCount ml={5} mb={2} />
               </Link>
             </div>
 
@@ -552,7 +555,8 @@ const Navigation = () => {
             <Link to="/favorite" className="flex relative">
               <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
                 <MdOutlineFavoriteBorder className=" mr-2" size={20} />
-                <span className="">Favorites</span> {/* <FavoritesCount /> */}
+                <span className="">Favorites</span>
+                {/* <FavoritesCount ml={10} mb={5} /> */}
               </div>
             </Link>
           </div>

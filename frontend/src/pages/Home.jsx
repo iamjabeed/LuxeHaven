@@ -13,7 +13,9 @@ const Home = () => {
     <>
       {!keyword ? <Header /> : null}
       {isLoading ? (
-        <Loader />
+        <div className="flex justify-center items-center w-full h-full">
+          <Loader />
+        </div>
       ) : isError ? (
         <Message variant="danger">
           {isError?.data.message || isError.error}
@@ -35,7 +37,7 @@ const Home = () => {
 
           <div>
             <div className="flex justify-center flex-wrap mt-[2rem]">
-              {data?.products.map((product) => (
+              {data?.products?.map((product) => (
                 <div key={product._id}>
                   <Product product={product} />
                 </div>

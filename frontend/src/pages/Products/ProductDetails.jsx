@@ -21,6 +21,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 import Ratings from "./Ratings";
+import ProductTabs from "./ProductTabs";
 
 const ProductDetails = () => {
   const { id: productId } = useParams();
@@ -42,6 +43,27 @@ const ProductDetails = () => {
 
   const [createReview, { isLoading: loadingProductReview }] =
     useCreateReviewMutation();
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      await createReview({
+        productId,
+        rating,
+        comment,
+      }).unwrap();
+      refetch();
+      toast.success("Review created successfully");
+    } catch (error) {
+      toast.error(error?.data || error.message);
+    }
+  };
+
+  // const addToCartHandler = () => {
+  //   dispatch(addToCart({ ...product, qty }));
+  //   navigate("/cart");
+  // };
 
   return (
     <>
@@ -137,6 +159,29 @@ const ProductDetails = () => {
                     </select>
                   </div>
                 )}
+              </div>
+
+              <div className="btn-container">
+                <button
+                  // onClick={addToCartHandler}
+                  disabled={product.countInStock === 0}
+                  className="bg-pink-600 text-white py-2 px-4 rounded-lg mt-4 md:mt-0"
+                >
+                  Add To Cart
+                </button>
+              </div>
+
+              <div className="mt-[5rem] container flex flex-wrap items-start justify-between">
+                <ProductTabs
+                  loadingProductReview={loadingProductReview}
+                  userInfo={userInfo}
+                  submitHandler={submitHandler}
+                  rating={rating}
+                  setRating={setRating}
+                  comment={comment}
+                  setComment={setComment}
+                  product={product}
+                />
               </div>
             </div>
           </div>

@@ -20,6 +20,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
+import Ratings from "./Ratings";
 
 const ProductDetails = () => {
   const { id: productId } = useParams();
@@ -55,7 +56,7 @@ const ProductDetails = () => {
       </div>
 
       {isLoading ? (
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center w-full h-[100%]">
           <Loader />
         </div>
       ) : error ? (
@@ -116,11 +117,10 @@ const ProductDetails = () => {
               </div>
 
               <div className="flex justify-between flex-wrap">
-                {/* <Ratings
+                <Ratings
                   value={product.rating}
                   text={`${product.numReviews} reviews`}
-                /> */}
-                <div>Ratings</div>
+                />
 
                 {product?.countInStock > 0 && (
                   <div>

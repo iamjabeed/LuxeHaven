@@ -3,15 +3,25 @@ import { setupListeners } from "@reduxjs/toolkit/query/react";
 import { apiSlice } from "./api/apiSlice";
 import authReducer from "./features/auth/authSlice";
 
+import favoritesReducer from "../redux/features/favorites/favoriteSlice";
+// import cartSliceReducer from "../redux/features/cart/cartSlice";
+// import shopReducer from "../redux/features/shop/shopSlice";
+import { getFavoritesFromLocalStorage } from "../Utils/localStorage";
+
+//Retrieve initail favorites from local storage
+const initialFavorites = getFavoritesFromLocalStorage() || [];
+
 // Configure the Redux store
 const store = configureStore({
   reducer: {
-    // Combine reducers for different parts of the state
-    // This key represents the part of the state managed by the apiSlice
     [apiSlice.reducerPath]: apiSlice.reducer,
-
-    // The "auth" key represents the part of the state managed by the authReducer
     auth: authReducer,
+
+    favorites: favoritesReducer,
+  },
+
+  preloadedState: {
+    favorites: initialFavorites,
   },
 
   // Middleware configuration

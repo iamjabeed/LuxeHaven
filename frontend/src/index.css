@@ -8,10 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-/* input,
-textarea {
-  color: #000;
-} */
 ::-webkit-scrollbar {
   display: none;
 }

@@ -367,7 +367,7 @@ const Navigation = () => {
                 {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Favorite
                 </span> */}
-                <FavoritesCount ml={5} mb={2} />
+                <FavoritesCount />
               </Link>
             </div>
 

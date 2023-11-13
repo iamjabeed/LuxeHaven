@@ -279,13 +279,14 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
+  const { cartItems } = useSelector((state) => state.cart);
   // console.log(userInfo);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false);
+  // const [showSidebar, setShowSidebar] = useState(false);
 
   //Mobile devices
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMobileMenu = () => {
     setMobileMenu(!mobileMenu);
@@ -293,16 +294,7 @@ const Navigation = () => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-    // console.log(dropdownOpen);
   };
-
-  // const toggleSidebar = () => {
-  //   setShowSidebar(!showSidebar);
-  // };
-
-  // const closeSidebar = () => {
-  //   setShowSidebar(false);
-  // };
 
   const dispatch = useDispatch();
 
@@ -356,13 +348,23 @@ const Navigation = () => {
                   Shop
                 </span> */}
               </Link>
-              <Link to="/cart" className="flex items-center">
+              <Link to="/cart" className="flex items-center relative">
                 <AiOutlineShoppingCart size={26} className="mt-3" />
                 {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Cart
                 </span> */}
+
+                <div className="absolute top-0 left-5">
+                  {cartItems?.length > 0 && (
+                    <span>
+                      <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                        {cartItems?.reduce((a, c) => a + c.qty, 0)}
+                      </span>
+                    </span>
+                  )}
+                </div>
               </Link>
-              <Link to="/favorite" className="flex items-center">
+              <Link to="/favorite" className="flex items-center relative">
                 <MdOutlineFavoriteBorder size={26} className="mt-3" />
                 {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Favorite

@@ -33,6 +33,11 @@ app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/upload", uploadRoutes);
 app.use("/api/v1/orders", orderRoutes);
 
+//******PayPal********
+app.get("/api/config/paypal", (req, res) => {
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID });
+});
+
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 

@@ -315,63 +315,68 @@ const Navigation = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[80px] bg-black p-4 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center">
+    <div
+      className={`${
+        mobileMenu
+          ? " bg-purple-800 fixed top-0 left-0 w-full h-[70px]"
+          : "bg-[#000000dd]"
+      } fixed top-0 left-0 w-full h-[70px] backdrop-blur-sm p-5 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center `}
+    >
       <ContentWrapper>
-        <div className="flex justify-between items-center">
-          <div className="flex justify-between items-center w-full">
-            <div className="flex items-center gap-4">
-              <button
-                className={`p-2 rounded-lg flex md:hidden`}
-                onClick={openMobileMenu}
-              >
-                {mobileMenu ? (
-                  <AiOutlineClose color="white" size={26} />
-                ) : (
-                  <>
-                    <HiOutlineMenuAlt1 color="white" size={26} />
-                  </>
-                )}
-              </button>
-
-              <Link to="/" className=" md:flex items-center">
-                <img src={Logo} className="w-[140px]" />
-              </Link>
-            </div>
-            <div className="hidden md:flex xl:flex lg:flex justify-center gap-8 items-center">
-              <Link to="/" className="flex items-center">
-                <AiOutlineHome size={26} className="mt-3" />
-                {/* <span className="text-base font-medium mt-3 ml-2">Home</span> */}
-              </Link>
-              <Link to="/shop" className="flex items-center">
-                <AiOutlineShopping size={26} className="mt-3" />
-                {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
+        <div className="flex justify-between items-center ">
+          <div className="flex justify-between items-center w-full ">
+            <div className="flex  gap-10">
+              <div>
+                <button className={`rounded-lg flex`} onClick={openMobileMenu}>
+                  {mobileMenu ? (
+                    <AiOutlineClose color="white" size={26} />
+                  ) : (
+                    <>
+                      <HiOutlineMenuAlt1 color="white" size={26} />
+                    </>
+                  )}
+                </button>
+              </div>
+              <div className="hidden md:flex xl:flex lg:flex justify-center gap-6 items-center">
+                <Link to="/" className="flex items-center">
+                  <AiOutlineHome size={26} className="" />
+                  {/* <span className="text-base font-medium mt-3 ml-2">Home</span> */}
+                </Link>
+                <Link to="/shop" className="flex items-center">
+                  <AiOutlineShopping size={26} className="" />
+                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Shop
                 </span> */}
-              </Link>
-              <Link to="/cart" className="flex items-center relative">
-                <AiOutlineShoppingCart size={26} className="mt-3" />
-                {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
+                </Link>
+                <Link to="/cart" className="flex items-center relative">
+                  <AiOutlineShoppingCart size={26} className="" />
+                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Cart
                 </span> */}
 
-                <div className="absolute top-0 left-5">
-                  {cartItems?.length > 0 && (
-                    <span>
-                      <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
-                        {cartItems?.reduce((a, c) => a + c.qty, 0)}
+                  <div className="absolute top-0 left-5">
+                    {cartItems?.length > 0 && (
+                      <span>
+                        <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                          {cartItems?.reduce((a, c) => a + c.qty, 0)}
+                        </span>
                       </span>
-                    </span>
-                  )}
-                </div>
-              </Link>
-              <Link to="/favorite" className="flex items-center relative">
-                <MdOutlineFavoriteBorder size={26} className="mt-3" />
-                {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
+                    )}
+                  </div>
+                </Link>
+                <Link to="/favorite" className="flex items-center relative">
+                  <MdOutlineFavoriteBorder size={26} className="" />
+                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
                   Favorite
                 </span> */}
-                <FavoritesCount />
-              </Link>
+                  <FavoritesCount />
+                </Link>
+              </div>
             </div>
+
+            <Link to="/" className=" md:flex items-center">
+              <img src={Logo} className="w-[140px] h-fit" />
+            </Link>
 
             <div
               className={`${
@@ -517,33 +522,40 @@ const Navigation = () => {
         {mobileMenu && (
           <div
             className={`${
-              mobileMenu ? "mobile  border-t bg-black pb-5" : "desktop"
-            }  flex flex-col pl-7 pt-4 gap-6`}
+              mobileMenu ? "mobile bg-purple-800 h-[100vh]" : "desktop"
+            }  flex flex-col gap-100 `}
             onClick={() => setMobileMenu(false)}
           >
-            <Link
-              to="/"
-              className="flex items-center transition-transform transform hover:translate-x-2"
-            >
-              <AiOutlineHome className="mr-2" size={26} />
-              <span className="">Home</span>{" "}
-            </Link>
+            <ContentWrapper>
+              <Link
+                to="/"
+                className="flex items-center transition-transform transform hover:translate-x-2"
+              >
+                {/* <AiOutlineHome className="mr-2" size={26} /> */}
+                <span className="text-2xl lg:text-5xl font-bold pl-5 xl:pl-0">
+                  Home
+                </span>{" "}
+              </Link>
 
-            <Link
-              to="/shop"
-              className="flex items-center transition-transform transform hover:translate-x-2"
-            >
-              <AiOutlineShopping className="mr-2" size={26} />
-              <span className="">Shop</span>{" "}
-            </Link>
+              <Link
+                to="/shop"
+                className="flex items-center transition-transform transform hover:translate-x-2"
+              >
+                {/* <AiOutlineShopping className="mr-2" size={26} /> */}
+                <span className="text-2xl lg:text-5xl font-bold pl-5 xl:pl-0">
+                  Shop
+                </span>{" "}
+              </Link>
 
-            <Link to="/cart" className="flex relative">
-              <div className="flex items-center transition-transform transform hover:translate-x-2">
-                <AiOutlineShoppingCart className=" mr-2" size={26} />
-                <span className="">Cart</span>{" "}
-              </div>
+              <Link to="/cart" className="flex relative">
+                <div className="flex items-center transition-transform transform hover:translate-x-2">
+                  {/* <AiOutlineShoppingCart className=" mr-2" size={26} /> */}
+                  <span className="text-2xl lg:text-5xl font-bold pl-5 xl:pl-0">
+                    Cart
+                  </span>{" "}
+                </div>
 
-              {/* <div className="absolute top-9">
+                {/* <div className="absolute top-9">
                 {cartItems.length > 0 && (
                   <span>
                     <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
@@ -552,15 +564,18 @@ const Navigation = () => {
                   </span>
                 )}
               </div> */}
-            </Link>
+              </Link>
 
-            <Link to="/favorite" className="flex relative">
-              <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-                <MdOutlineFavoriteBorder className=" mr-2" size={20} />
-                <span className="">Favorites</span>
-                {/* <FavoritesCount ml={10} mb={5} /> */}
-              </div>
-            </Link>
+              <Link to="/favorite" className="flex relative">
+                <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
+                  {/* <MdOutlineFavoriteBorder className=" mr-2" size={20} /> */}
+                  <span className="text-2xl lg:text-5xl font-bold pl-5 xl:pl-0">
+                    Favorites
+                  </span>
+                  {/* <FavoritesCount ml={10} mb={5} /> */}
+                </div>
+              </Link>
+            </ContentWrapper>
           </div>
         )}
       </ContentWrapper>

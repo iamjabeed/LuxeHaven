@@ -2,7 +2,7 @@ import ContentWrapper from "../components/ContentWrapper";
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-base-300 w-full flex items-center justify-between text-center bg-black h-[20vh]">
+    <footer className="p-4 bg-base-300 w-full flex items-center justify-between text-center bg-black h-[20vh] mt-10">
       <ContentWrapper>
         <aside>
           <p className="text-base font-medium xl:text-xl">

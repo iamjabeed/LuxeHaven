@@ -4,6 +4,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
+import Footer from "./Footer";
 
 const Home = () => {
   const { keyword } = useParams();
@@ -11,7 +12,11 @@ const Home = () => {
 
   return (
     <>
-      {!keyword ? <Header /> : null}
+      {!keyword ? (
+        <>
+          <Header />
+        </>
+      ) : null}
       {isLoading ? (
         <div className="flex justify-center items-center w-full h-[100vh]">
           <Loader />

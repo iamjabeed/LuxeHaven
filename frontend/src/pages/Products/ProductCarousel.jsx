@@ -51,11 +51,11 @@ const ProductCarousel = () => {
               quantity,
               countInStock,
             }) => (
-              <div key={_id} className="mx-auto">
+              <div key={_id} className="mx-auto h-[80vh]">
                 <img
                   src={image}
                   alt={name}
-                  className="w-full rounded-md object-cover h-[30rem]"
+                  className="w-full rounded-md object-cover h-1/2"
                 />
 
                 <div className="mt-4 flex justify-between">
@@ -67,7 +67,7 @@ const ProductCarousel = () => {
                     </p>
                   </div>
 
-                  <div className="flex justify-between w-[15rem]">
+                  <div className="flex justify-between w-1/2">
                     <div className="one">
                       <h1 className="flex items-center mb-6">
                         <FaStore className="mr-2 text-white" /> Brand: {brand}

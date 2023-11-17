@@ -18,7 +18,7 @@ const Header = () => {
   }
   return (
     <>
-      <BannerSlider />
+      {/* <BannerSlider /> */}
       <div className="flex justify-between gap-5">
         <div className="xl:block lg:hidden md:hidden sm:hidden">
           <div className="grid grid-cols-2">

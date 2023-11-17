@@ -53,12 +53,12 @@ const Profile = () => {
 
   return (
     <div className="">
-      <div className="px-4 flex justify-around items-center flex-wrap gap-8 h-[100vh] w-full text-gray-500 overflow-hidden">
+      <div className="px-4 flex justify-around items-center flex-wrap gap-8 h-[90vh] w-full text-gray-500 overflow-hidden">
         <form
           onSubmit={submitHandler}
           className="container w-[21rem] md:w-[33rem] 2xl:w-[36rem]"
         >
-          <h2 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2">
+          <h2 className="text-lg md:text-2xl 2xl:text-2xl font-medium mb-2 text-white">
             Update Profile
           </h2>
           <div>

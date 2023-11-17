@@ -13,7 +13,7 @@ const Home = () => {
     <>
       {!keyword ? <Header /> : null}
       {isLoading ? (
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center w-full h-[100vh]">
           <Loader />
         </div>
       ) : isError ? (

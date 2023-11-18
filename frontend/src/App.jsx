@@ -9,6 +9,20 @@ import Cursor from "./components/Cursor";
 // import Shery from "sheryjs";
 
 function App() {
+  // const onNavScroll = () => {
+  //   if (window.scrollY > 30) {
+  //     setNavState(true);
+  //   } else {
+  //     setNavState(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", onNavScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", onNavScroll);
+  //   };
+  // }, []);
   return (
     <>
       <ToastContainer />
@@ -17,7 +31,7 @@ function App() {
         <Cursor />
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

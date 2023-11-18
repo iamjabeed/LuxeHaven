@@ -365,10 +365,10 @@ const Navigation = () => {
                   Cart
                 </span> */}
 
-                  <div className="absolute top-0 left-5">
+                  <div className="absolute top-[-10px] left-4">
                     {cartItems?.length > 0 && (
                       <span>
-                        <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                        <span className="h-4 w-4 px-1 py-0 text-sm text-white bg-[#db1143f3] rounded-full">
                           {cartItems?.reduce((a, c) => a + c.qty, 0)}
                         </span>
                       </span>

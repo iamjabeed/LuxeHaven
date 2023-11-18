@@ -2,42 +2,36 @@ import { Link } from "react-router-dom";
 // import HeartIcon from "./HeartIcon";
 
 const SmallProduct = ({ product }) => {
+  console.log(product);
   return (
-    <div className="w-[14rem]">
-      <div className="relative">
-        <img src={product.image} alt={product.name} className="h-36 rounded" />
-        {/* <HeartIcon product={product} /> */}
-      </div>
+    <Link to={`/product/${product._id}`}>
+      <div className="w-[15rem] h-[18rem] border overflow-hidden flex flex-col gap-4">
+        <div className="relative h-[70%]">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full rounded"
+          />
+          {/* <HeartIcon product={product} /> */}
+        </div>
 
-      <div className="p-2">
-        <Link to={`/product/${product._id}`}>
-          <h2 className="flex gap-4 items-center">
-            <div>{product.name}</div>
-            <span className="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-              ${product.price}
-            </span>
-          </h2>
-        </Link>
+        <div className="p-2 h-[30%]">
+          <div className="flex items-center flex-col gap-2">
+            <div className="flex gap-3 justify-center items-center w-full">
+              <h4>{product.name}</h4>
+            </div>
+            <div className="flex gap-2 w-full justify-around">
+              <span>{product.brand}</span>
+              <span>{product.rating} ⭐</span>
+              <span className="bg-pink-100 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
+                ${product.price}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 export default SmallProduct;
-
-// <div
-//   className="cursor-pointer mb-25 flex-shrink-0"
-//   onClick={() => navigate(`/${data.media_type || mediaType}/${data.id}`)}
-// >
-//   <div className="relative w-full aspect-w-1 aspect-h-1.5 bg-cover bg-center mb-30 flex items-end justify-between p-10 transition-all ease-300">
-//     <Img className="absolute top-0 left-0 w-full h-full rounded-12 overflow-hidden" src={posterUrl} />
-//   </div>
-//   <div className="text-white flex flex-col">
-//     <span className="text-16 mb-10 leading-24 md:text-20">
-//       {data.title || data.name}
-//     </span>
-//     <span className="text-14 opacity-50">
-//       {dayjs(data.release_date).format("MMM D, YYYY")}
-//     </span>
-//   </div>
-// </div>

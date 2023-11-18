@@ -255,10 +255,16 @@ import {
   AiOutlineUserAdd,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { RiAccountCircleLine } from "react-icons/ri";
+import { MdLogout } from "react-icons/md";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { MdOutlineCategory } from "react-icons/md";
+import { BsBoxSeam } from "react-icons/bs";
+import { CiCircleList } from "react-icons/ci";
+import { RiContactsLine } from "react-icons/ri";
 
 import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css";
-import { FaHeart } from "react-icons/fa";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -276,6 +282,8 @@ import FavoritesCount from "../Products/FavoritesCount.jsx";
 
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+
+import { motion } from "framer-motion";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -315,7 +323,10 @@ const Navigation = () => {
   };
 
   return (
-    <div
+    <motion.div
+      // initial={{ y: -1000 }}
+      // animate={{ y: 0 }}
+      // transition={{ duration: 0.3 }}
       className={`${
         mobileMenu
           ? " bg-purple-800 fixed top-0 left-0 w-full h-[70px]"
@@ -375,13 +386,19 @@ const Navigation = () => {
             </div>
 
             <Link to="/" className=" md:flex items-center">
-              <img src={Logo} className="w-[140px] h-fit" />
+              <motion.img
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                src={Logo}
+                className="w-[140px] h-fit"
+              />
             </Link>
 
             <div
               className={`${
                 userInfo?.isAdmin ? "flex gap-2 md:gap-3" : ""
-              } "relative" `}
+              } relative `}
             >
               <button
                 onClick={toggleDropdown}
@@ -416,7 +433,10 @@ const Navigation = () => {
                 )}
               </button>
 
-              <div onClick={() => setDropdownOpen(false)}>
+              <div
+                onClick={() => setDropdownOpen(false)}
+                className="relative w-full"
+              >
                 {userInfo?.isAdmin && (
                   <AdminMenu
                     setDropdownOpen={setDropdownOpen}
@@ -427,67 +447,78 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute bg-[#db1143f3] text-[#ffffff] rounded-md top-[80px] border`}
+                  className={`absolute bg-black text-[#ffffff] rounded-sm top-[50px] right-0 border border-[#919191] w-40 lg:w-52`}
                   onClick={() => setDropdownOpen(false)}
                 >
+                  <h2 className="w-full text-sm xl:text-lg font-semibold xl:font-bold border-b py-3">
+                    My Account
+                  </h2>
+
                   {userInfo.isAdmin && (
                     <>
-                      <li>
+                      <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                         <Link
                           to="/admin/dashboard"
-                          className="block px-4 py-2 rounded-md hover:bg-[#FF2E63] border-b-2"
+                          className="flex gap-3 items-center justify-center "
                         >
+                          <MdOutlineSpaceDashboard size={24} />
                           Dashboard
                         </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                         <Link
                           to="/admin/productlist"
-                          className="block px-4 py-2 rounded-md hover:bg-[#FF2E63] border-b-2"
+                          className="flex gap-3 items-center justify-center "
                         >
+                          <BsBoxSeam size={24} />
                           Products
                         </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                         <Link
                           to="/admin/categorylist"
-                          className="block px-4 py-2 rounded-md hover-bg-[#FF2E63] border-b-2"
+                          className="flex gap-3 items-center justify-center "
                         >
+                          <MdOutlineCategory size={24} />
                           Category
                         </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                         <Link
                           to="/admin/orderlist"
-                          className="block px-4 py-2 rounded-md hover-bg-[#FF2E63] border-b-2"
+                          className="flex gap-3 items-center justify-center "
                         >
+                          <CiCircleList size={24} />
                           Orders
                         </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2 border-b mb-4">
                         <Link
                           to="/admin/userlist"
-                          className="block px-4 py-2 rounded-md hover-bg-[#FF2E63] border-b-2"
+                          className="flex gap-3 items-center justify-center "
                         >
+                          <RiContactsLine size={24} />
                           Users
                         </Link>
                       </li>
                     </>
                   )}
 
-                  <li>
+                  <li className="flex hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                     <Link
                       to="/profile"
-                      className="block px-4 py-2 rounded-md hover-bg-[#FF2E63] border-b-2"
+                      className="flex gap-3 items-center justify-center "
                     >
+                      <RiAccountCircleLine size={24} />
                       Profile
                     </Link>
                   </li>
-                  <li>
+                  <li className="flex items-center hover:bg-[#1f1f1f] transition-all duration-500 h-8 rounded-sm m-2 px-2">
                     <button
                       onClick={logoutHandler}
-                      className="w-full text-left block px-4 py-2 rounded-md hover-bg-[#FF2E63]"
+                      className="flex gap-3 items-center justify-center"
                     >
+                      <MdLogout size={24} />
                       Logout
                     </button>
                   </li>
@@ -579,7 +610,7 @@ const Navigation = () => {
           </div>
         )}
       </ContentWrapper>
-    </div>
+    </motion.div>
   );
 };
 export default Navigation;

@@ -351,20 +351,12 @@ const Navigation = () => {
               <div className="hidden md:flex xl:flex lg:flex justify-center gap-6 items-center">
                 <Link to="/" className="flex items-center">
                   <AiOutlineHome size={26} className="" />
-                  {/* <span className="text-base font-medium mt-3 ml-2">Home</span> */}
                 </Link>
                 <Link to="/shop" className="flex items-center">
                   <AiOutlineShopping size={26} className="" />
-                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
-                  Shop
-                </span> */}
                 </Link>
                 <Link to="/cart" className="flex items-center relative">
                   <AiOutlineShoppingCart size={26} className="" />
-                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
-                  Cart
-                </span> */}
-
                   <div className="absolute top-[-10px] left-4">
                     {cartItems?.length > 0 && (
                       <span>
@@ -377,9 +369,6 @@ const Navigation = () => {
                 </Link>
                 <Link to="/favorite" className="flex items-center relative">
                   <MdOutlineFavoriteBorder size={26} className="" />
-                  {/* <span className="text-base font-medium mt-3 ml-2 text-[#F6F6F6]">
-                  Favorite
-                </span> */}
                   <FavoritesCount />
                 </Link>
               </div>

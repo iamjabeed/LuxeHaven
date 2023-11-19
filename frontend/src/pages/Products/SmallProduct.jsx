@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 // import HeartIcon from "./HeartIcon";
 
 const SmallProduct = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <Link to={`/product/${product._id}`}>
       <div className="w-[15rem] h-[18rem] border overflow-hidden flex flex-col gap-4">

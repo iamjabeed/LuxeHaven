@@ -49,8 +49,11 @@ const Cart = () => {
                   Shopping Cart 🛒
                 </h1>
                 {cartItems?.map((item) => (
-                  <div key={item._id} className="flex gap-4 mb-6 h-44 border-b">
-                    <div className="overflow-hidden transition-all ease-in-out">
+                  <div
+                    key={item._id}
+                    className="flex gap-4 mb-6 lg:h-44 border-b border-[#444444]"
+                  >
+                    <div className="overflow-hidden transition-all ease-in-out w-1/4">
                       <img
                         src={item.image}
                         alt={item.name}

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+import { RxDashboard } from "react-icons/rx";
 import ContentWrapper from "../../components/ContentWrapper";
 
 const AdminMenu = () => {
@@ -17,20 +18,15 @@ const AdminMenu = () => {
     <div className="">
       <ContentWrapper>
         <div>
-          <button
-            className={`bg-[#151515] p-2 rounded-lg`}
-            // className={`${
-            //   isMenuOpen ? "top-[100px] left-7" : "top-[100px] left-7"
-            // } bg-[#151515] p-2 fixed rounded-lg`}
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? (
+          <button className={`rounded-lg`} onClick={toggleMenu}>
+            {/* {isMenuOpen ? (
               <AiOutlineClose color="white" size={26} />
             ) : (
               <>
                 <HiOutlineMenuAlt1 color="white" size={26} />
               </>
-            )}
+            )} */}
+            <RxDashboard size={26} />
           </button>
         </div>
       </ContentWrapper>

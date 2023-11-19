@@ -51,13 +51,13 @@ const Cart = () => {
                 {cartItems?.map((item) => (
                   <div
                     key={item._id}
-                    className="flex gap-4 mb-6 lg:h-44 border-b border-[#444444]"
+                    className="flex gap-16 mb-6 lg:h-44 bg-black"
                   >
-                    <div className="overflow-hidden transition-all ease-in-out w-1/4">
+                    <div className="overflow-hidden transition-transform ease-in-out duration-300 transform hover:scale-105 w-1/4 ">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover hover:scale-105"
+                        className="w-full h-full object-cover hover"
                       />
                     </div>
                     <div className="flex justify-between flex-1 mx-5">

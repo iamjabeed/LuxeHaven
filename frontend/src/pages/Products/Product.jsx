@@ -3,24 +3,27 @@ import HeartIcon from "./HeartIcon";
 
 const Product = ({ product }) => {
   return (
-    <div className="w-[30rem] ml-[2rem] p-3 relative">
-      <div className="relative">
+    <div className="w-52 h-64 border border-[#444444] overflow-hidden bg-black rounded-sm hover:shadow-lg hover:shadow-[#ffffffb7]/10">
+      <div className="relative h-[70%] transition-transform ease-in-out duration-300 transform hover:scale-105">
         <img
           src={product.image}
           alt={product.name}
-          className="w-[30rem] rounded"
+          className="w-full h-full object-cover"
         />
         <HeartIcon product={product} />
       </div>
 
-      <div className="p-4">
+      <div className="h-[30%] mt-2 px-2 overflow-hidden">
         <Link to={`/product/${product._id}`}>
-          <h2 className="flex justify-between items-center">
-            <div className="text-lg">{product.name}</div>
-            <span className="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-              $ {product.price}
-            </span>
-          </h2>
+          <div className="flex justify-between flex-col">
+            <h4 className="text-sm lg:text-base">
+              {product.name.substring(0, 20)}...
+            </h4>
+            <div className="flex gap-4">
+              <span className="text-sm ">$ {product.price}</span>
+              <span className="text-sm ">{product.rating}⭐</span>
+            </div>
+          </div>
         </Link>
       </div>
     </div>

@@ -1,9 +1,13 @@
-import { useGetTopProductsQuery } from "../../redux/api/productApiSlice";
+import {
+  useGetTopProductsQuery,
+  useGetNewProductsQuery,
+} from "../../redux/api/productApiSlice";
 import Message from "../../components/Message";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import moment from "moment";
+
 import {
   FaBox,
   FaClock,
@@ -11,9 +15,10 @@ import {
   FaStar,
   FaStore,
 } from "react-icons/fa";
+import ContentWrapper from "../../components/ContentWrapper";
 
 const ProductCarousel = () => {
-  const { data: products, isLoading, error } = useGetTopProductsQuery();
+  const { data: products, isLoading, error } = useGetNewProductsQuery();
 
   const settings = {
     dots: false,
@@ -27,21 +32,19 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="mb-4 hidden lg:block xl:block md:block">
+    // <ContentWrapper>
+    <div className="">
       {isLoading ? null : error ? (
         <Message variant="danger">
           {error?.data?.message || error.error}
         </Message>
       ) : (
         <>
-          <h1 className="text-base lg:text-2xl font-bold mb-4">
+          <h1 className="text-base lg:text-2xl font-bold mb-8">
             Featured Products
           </h1>
 
-          <Slider
-            {...settings}
-            className="xl:w-[40rem] lg:w-[35rem] md:w-[30rem] sm:w-[25rem] sm:block mx-auto"
-          >
+          <Slider {...settings} className="w-[80vw] md:w-[45rem] mx-auto">
             {products.map(
               ({
                 image,
@@ -56,23 +59,30 @@ const ProductCarousel = () => {
                 quantity,
                 countInStock,
               }) => (
-                <div key={_id} className="mx-auto h-[80vh]">
+                <div key={_id} className="mx-auto h-[450px] md:h-[700px]">
                   <img
                     src={image}
                     alt={name}
-                    className="w-full rounded-md object-cover h-1/2"
+                    className="w-full rounded-sm object-cover h-[80%]"
                   />
 
-                  <div className="mt-4 flex justify-between">
+                  <div className="mt-2 flex border border-[#444444] px-2 p-2 text-[#d8e2f2c3] overflow-hidden">
                     <div className="one">
-                      <h2>{name}</h2>
-                      <p> $ {price}</p> <br /> <br />
-                      <p className="w-[15rem]">
-                        {description.substring(0, 170)} ...
+                      <div className="flex gap-8 justify-between">
+                        <h2 className="text-base md:text-lg font-medium text-white/80 mb-2">
+                          {name.substring(0, 50)}...
+                        </h2>
+                        <p className="text-[#009650] text-sm md:text-base md:font-bold hidden md:flex">
+                          {" "}
+                          $ {price}
+                        </p>
+                      </div>
+                      <p className="md:flex text-sm hidden">
+                        {description.substring(0, 120)} ...
                       </p>
                     </div>
 
-                    <div className="flex justify-between w-1/2">
+                    {/* <div className="flex justify-between w-1/2">
                       <div className="one">
                         <h1 className="flex items-center mb-6">
                           <FaStore className="mr-2 text-white" /> Brand: {brand}
@@ -101,7 +111,7 @@ const ProductCarousel = () => {
                           {countInStock}
                         </h1>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )
@@ -110,6 +120,7 @@ const ProductCarousel = () => {
         </>
       )}
     </div>
+    // </ContentWrapper>
   );
 };
 

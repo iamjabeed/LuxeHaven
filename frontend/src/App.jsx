@@ -27,7 +27,7 @@ function App() {
     <>
       <ToastContainer />
       <Navigation />
-      <main className="mt-[85px] contentWrapper pb-[100vh]">
+      <main className="mt-[80px] pb-[100vh]">
         <Cursor />
         <Outlet />
       </main>

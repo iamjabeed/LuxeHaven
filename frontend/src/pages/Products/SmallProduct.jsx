@@ -1,36 +1,46 @@
 import { Link } from "react-router-dom";
-// import HeartIcon from "./HeartIcon";
+import HeartIcon from "./HeartIcon";
+import ContentWrapper from "../../components/ContentWrapper";
 
 const SmallProduct = ({ product }) => {
   // console.log(product);
   return (
-    <Link to={`/product/${product._id}`}>
-      <div className="w-[15rem] h-[18rem] bg-black overflow-hidden flex flex-col gap-4">
-        <div className="relative h-[70%]">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
-          {/* <HeartIcon product={product} /> */}
-        </div>
-
-        <div className="p-2 h-[30%]">
+    // <ContentWrapper>
+    <div className="w-[12rem] lg:w-[15rem] h-[17rem] md:h-[20rem] overflow-hidden flex flex-col gap-4 border border-[#444444]">
+      <div className="relative h-[80%]">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover"
+        />
+        <HeartIcon product={product} />
+      </div>
+      <Link to={`/product/${product._id}`}>
+        <div className="p-2 h-[20%]">
           <div className="flex items-center flex-col gap-2 mx-2">
-            <div className="flex gap-3 w-full">
-              <h4>{product.name}</h4>
+            <div className="flex w-full">
+              <h4 className="text-sm font-bold">
+                {product.name?.substring(0, 20)}...
+              </h4>
             </div>
-            <div className="flex gap-3 w-full items-center opacity-80">
+            {/* <div className="flex gap-3 w-full items-center opacity-80">
+              <span>{product.brand}</span>
+              <span className="text-white w-[60px] px-2 py-1 rounded cursor-pointer text-sm font-semibold">
+                ${product.price}
+              </span>
+            </div> */}
+            {/* <div className="flex gap-3 w-full items-center opacity-80">
               <span>{product.brand}</span>
               <span className="text-white w-[60px] px-2 py-1 rounded cursor-pointer text-sm font-semibold">
                 ${product.price}
               </span>
               <span>{product.rating} ⭐</span>
-            </div>
+            </div> */}
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
+    // </ContentWrapper>
   );
 };
 

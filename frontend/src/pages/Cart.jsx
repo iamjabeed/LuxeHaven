@@ -65,7 +65,7 @@ const Cart = () => {
                         <div className=" ">
                           <Link to={`/product/${item._id}`} className="">
                             <h4 className="text-white capitalize text-sm md:text-base xl:text-lg font-normal xl:font-semibold hover:underline">
-                              {item.name}
+                              {item.name.substring(0, 35)}...
                             </h4>
                           </Link>
                           <h4 className="hidden md:flex text-[#dcdcdc] text-sm font-medium">

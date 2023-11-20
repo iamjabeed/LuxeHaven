@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 body {
-  background: #0e1629;
+  /* background: #0e1629; */
   color: #fff;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  /* font-family: "ui-sans-serif"; */
 }
 
 ::-webkit-scrollbar {
@@ -15,6 +16,12 @@ body {
 }
 .apexcharts-menu {
   background: #000;
+}
+/* styles.css (or wherever you define your global styles) */
+.gradient-text {
+  background-image: linear-gradient(0deg, #c892f3 57%, #ebebeb 67%);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* color palettes */

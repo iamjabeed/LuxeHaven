@@ -5,6 +5,7 @@ import Message from "../components/Message";
 import Header from "../components/Header";
 import Product from "./Products/Product";
 import Footer from "./Footer";
+import ContentWrapper from "../components/ContentWrapper";
 
 const Home = () => {
   const { keyword } = useParams();
@@ -26,25 +27,31 @@ const Home = () => {
           {isError?.data.message || isError.error}
         </Message>
       ) : (
-        <div className="min-h-[100vh] mt-12 border border-black">
-          <div className="flex justify-between items-center mx-auto  mb-10">
-            <h1 className="text-base xl:text-3xl">Special Products</h1>
-            <button className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-[100px] md:w-[140px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold">
-              <Link to="/shop" className="">
-                Shop
-              </Link>
-            </button>
-          </div>
+        <div>
+          <ContentWrapper>
+            <div className="min-h-[100vh] h-full text-black">
+              <div className="flex justify-between items-center mx-auto mb-10">
+                <h1 className="text-base lg:text-2xl font-[700]">
+                  Special Products
+                </h1>
+                <button className="bg-[#0e1629] hover:bg-[#FF2E63] transition-colors ease-in-out duration-500 text-white border-none outline-none w-[100px] md:w-[140px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold">
+                  <Link to="/shop" className="">
+                    Shop
+                  </Link>
+                </button>
+              </div>
 
-          <div>
-            <div className="flex justify-center gap-6 mt-[2rem] whitespace-nowrap overflow-x-scroll pl-[30%] border">
-              {data?.products?.map((product) => (
-                <div key={product._id}>
-                  <Product product={product} />
+              <div>
+                <div className="flex justify-center gap-6 mt-[2rem] whitespace-nowrap overflow-x-scroll pl-[30%] border">
+                  {data?.products?.map((product) => (
+                    <div key={product._id}>
+                      <Product product={product} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          </ContentWrapper>
         </div>
       )}
     </>

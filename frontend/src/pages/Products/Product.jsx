@@ -3,7 +3,7 @@ import HeartIcon from "./HeartIcon";
 
 const Product = ({ product }) => {
   return (
-    <div className="w-52 lg:w-64 h-64 lg:h-80 overflow-hidden bg-[#000]/60 rounded-sm hover:shadow-lg hover:shadow-[#ffffffb7]/5">
+    <div className="w-52 lg:w-64 h-64 lg:h-80 overflow-hidden rounded-sm hover:shadow-lg">
       <div className="relative h-[75%]">
         <img
           src={product.image}

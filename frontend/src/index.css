@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: canopee;
+  src: url(./Canopee.ttf);
+}
+
+@font-face {
+  font-family: editorial;
+  src: url(./editorial.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* background: #0e1629; */
   color: #fff;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  /* font-family: "ui-sans-serif"; */
+  font-family: "Inter", sans-serif;
 }
 
 ::-webkit-scrollbar {

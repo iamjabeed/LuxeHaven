@@ -74,15 +74,12 @@ const Navigation = () => {
   };
 
   return (
-    <motion.div
-      // initial={{ y: -1000 }}
-      // animate={{ y: 0 }}
-      // transition={{ duration: 0.3 }}
+    <div
       className={`${
         mobileMenu
-          ? " bg-purple-800 fixed top-0 left-0 w-full h-[70px]"
-          : "bg-[#0F172A]"
-      } fixed top-0 left-0 w-full h-[80px] backdrop-blur-sm p-5 text-[#D8E2F2] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center`}
+          ? " bg-purple-800 fixed top-0 left-0 right-0 w-full h-[70px] "
+          : "bg-[#0F172A] backdrop-blur-lg"
+      } fixed top-0 left-0 w-full h-[80px]  p-5 text-[#D8E2F2] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center`}
     >
       <ContentWrapper>
         <div className="flex justify-between items-center text-[#D8E2F2]">
@@ -373,7 +370,7 @@ const Navigation = () => {
           </div>
         )}
       </ContentWrapper>
-    </motion.div>
+    </div>
   );
 };
 export default Navigation;

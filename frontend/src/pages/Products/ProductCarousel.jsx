@@ -33,75 +33,81 @@ const ProductCarousel = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <Slider
-          {...settings}
-          className="xl:w-[40rem] lg:w-[35rem] md:w-[30rem] sm:w-[25rem] sm:block mx-auto"
-        >
-          {products.map(
-            ({
-              image,
-              _id,
-              name,
-              price,
-              description,
-              brand,
-              createdAt,
-              numReviews,
-              rating,
-              quantity,
-              countInStock,
-            }) => (
-              <div key={_id} className="mx-auto h-[80vh]">
-                <img
-                  src={image}
-                  alt={name}
-                  className="w-full rounded-md object-cover h-1/2"
-                />
+        <>
+          <h1 className="text-base lg:text-2xl font-bold mb-4">
+            Featured Products
+          </h1>
 
-                <div className="mt-4 flex justify-between">
-                  <div className="one">
-                    <h2>{name}</h2>
-                    <p> $ {price}</p> <br /> <br />
-                    <p className="w-[15rem]">
-                      {description.substring(0, 170)} ...
-                    </p>
-                  </div>
+          <Slider
+            {...settings}
+            className="xl:w-[40rem] lg:w-[35rem] md:w-[30rem] sm:w-[25rem] sm:block mx-auto"
+          >
+            {products.map(
+              ({
+                image,
+                _id,
+                name,
+                price,
+                description,
+                brand,
+                createdAt,
+                numReviews,
+                rating,
+                quantity,
+                countInStock,
+              }) => (
+                <div key={_id} className="mx-auto h-[80vh]">
+                  <img
+                    src={image}
+                    alt={name}
+                    className="w-full rounded-md object-cover h-1/2"
+                  />
 
-                  <div className="flex justify-between w-1/2">
+                  <div className="mt-4 flex justify-between">
                     <div className="one">
-                      <h1 className="flex items-center mb-6">
-                        <FaStore className="mr-2 text-white" /> Brand: {brand}
-                      </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaClock className="mr-2 text-white" /> Added:{" "}
-                        {moment(createdAt).fromNow()}
-                      </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Reviews:
-                        {numReviews}
-                      </h1>
+                      <h2>{name}</h2>
+                      <p> $ {price}</p> <br /> <br />
+                      <p className="w-[15rem]">
+                        {description.substring(0, 170)} ...
+                      </p>
                     </div>
 
-                    <div className="two">
-                      <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Ratings:{" "}
-                        {Math.round(rating)}
-                      </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
-                        {quantity}
-                      </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaBox className="mr-2 text-white" /> In Stock:{" "}
-                        {countInStock}
-                      </h1>
+                    <div className="flex justify-between w-1/2">
+                      <div className="one">
+                        <h1 className="flex items-center mb-6">
+                          <FaStore className="mr-2 text-white" /> Brand: {brand}
+                        </h1>
+                        <h1 className="flex items-center mb-6">
+                          <FaClock className="mr-2 text-white" /> Added:{" "}
+                          {moment(createdAt).fromNow()}
+                        </h1>
+                        <h1 className="flex items-center mb-6">
+                          <FaStar className="mr-2 text-white" /> Reviews:
+                          {numReviews}
+                        </h1>
+                      </div>
+
+                      <div className="two">
+                        <h1 className="flex items-center mb-6">
+                          <FaStar className="mr-2 text-white" /> Ratings:{" "}
+                          {Math.round(rating)}
+                        </h1>
+                        <h1 className="flex items-center mb-6">
+                          <FaShoppingCart className="mr-2 text-white" />{" "}
+                          Quantity: {quantity}
+                        </h1>
+                        <h1 className="flex items-center mb-6">
+                          <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                          {countInStock}
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          )}
-        </Slider>
+              )
+            )}
+          </Slider>
+        </>
       )}
     </div>
   );

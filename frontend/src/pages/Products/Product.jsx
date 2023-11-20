@@ -3,8 +3,8 @@ import HeartIcon from "./HeartIcon";
 
 const Product = ({ product }) => {
   return (
-    <div className="w-52 h-64 border border-[#444444] overflow-hidden bg-black rounded-sm hover:shadow-lg hover:shadow-[#ffffffb7]/10">
-      <div className="relative h-[70%]">
+    <div className="w-52 lg:w-64 h-64 lg:h-80 overflow-hidden bg-[#000]/60 rounded-sm hover:shadow-lg hover:shadow-[#ffffffb7]/5">
+      <div className="relative h-[75%]">
         <img
           src={product.image}
           alt={product.name}
@@ -13,17 +13,19 @@ const Product = ({ product }) => {
         <HeartIcon product={product} />
       </div>
 
-      <div className="h-[30%] mt-2 px-2 overflow-hidden">
+      <div className="h-[25%] mt-2 px-2 overflow-hidden">
         <Link to={`/product/${product._id}`}>
           <div className="flex justify-between flex-col">
-            <h4 className="text-sm lg:text-base">
-              {product.name.substring(0, 20)}...
+            <h4 className="text-sm lg:text-base hover:text-[#db1144] hover:font-bold">
+              {product.name.substring(0, 30)}...
             </h4>
-            <div className="flex gap-4 mt-2">
-              <span className="text-sm ">
-                <span className="opacity-70">Price:</span> ${product.price}
+            <div className="flex justify-between mt-2">
+              <span className="text-sm font-bold flex gap-2">
+                ${product.price}
+                <s className="opacity-70 font-medium">$ {product.price * 2}</s>
+                <p className="text-[#009650]"> (50% off)</p>
               </span>
-              <span className="text-sm ">{product.rating}⭐</span>
+              {/* <span className="text-sm ">{product.rating}⭐</span> */}
             </div>
           </div>
         </Link>

@@ -44,7 +44,7 @@ const AllProducts = () => {
                     <div className="p-4 flex flex-col justify-around">
                       <div className="flex justify-between">
                         <h5 className="text-xl font-semibold mb-2">
-                          {product?.name}
+                          {product?.name?.substring(0, 30)}...
                         </h5>
 
                         <p className="text-gray-400 text-xs">
@@ -53,7 +53,7 @@ const AllProducts = () => {
                       </div>
 
                       <p className="text-gray-400 xl:w-[30rem] lg:w-[30rem] md:w-[20rem] sm:w-[10rem] text-sm mb-4">
-                        {product?.description?.substring(0, 160)}...
+                        {product?.description?.substring(0, 120)}...
                       </p>
 
                       <div className="flex justify-between">

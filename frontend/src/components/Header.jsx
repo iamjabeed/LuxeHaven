@@ -21,6 +21,7 @@ const Header = () => {
       {/* <BannerSlider /> */}
       <div className="flex justify-between gap-5">
         <div className="xl:block lg:hidden md:hidden sm:hidden">
+          <h4 className="text-base lg:text-2xl font-bold mb-4">Top Products</h4>
           <div className="grid grid-cols-2 gap-5">
             {data?.map((product) => (
               <div key={product._id}>

@@ -330,7 +330,7 @@ const Navigation = () => {
       className={`${
         mobileMenu
           ? " bg-purple-800 fixed top-0 left-0 w-full h-[70px]"
-          : "bg-[#000000dd]"
+          : "bg-[#0E1629]"
       } fixed top-0 left-0 w-full h-[70px] backdrop-blur-sm p-5 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center `}
     >
       <ContentWrapper>

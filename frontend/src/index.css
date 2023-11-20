@@ -13,6 +13,9 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+.apexcharts-menu {
+  background: #000;
+}
 
 /* color palettes */
 footer {

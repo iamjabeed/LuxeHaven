@@ -330,37 +330,57 @@ const Navigation = () => {
       className={`${
         mobileMenu
           ? " bg-purple-800 fixed top-0 left-0 w-full h-[70px]"
-          : "bg-[#0E1629]"
-      } fixed top-0 left-0 w-full h-[70px] backdrop-blur-sm p-5 text-[#F6F6F6] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center `}
+          : "bg-[#0F172A]"
+      } fixed top-0 left-0 w-full h-[70px] backdrop-blur-sm p-5 text-[#D8E2F2] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center `}
     >
       <ContentWrapper>
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center text-[#D8E2F2]">
           <div className="flex justify-between items-center w-full ">
-            <div className="flex  gap-10">
+            <div className="flex gap-10">
               <div>
-                <button className={`rounded-lg flex`} onClick={openMobileMenu}>
+                <button
+                  className={`rounded-lg flex text-[#d8e2f2c3] hover:text-[#FFF]`}
+                  onClick={openMobileMenu}
+                >
                   {mobileMenu ? (
-                    <AiOutlineClose color="white" size={26} />
+                    <AiOutlineClose
+                      color="white"
+                      size={26}
+                      className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                    />
                   ) : (
                     <>
-                      <HiOutlineMenuAlt1 color="white" size={26} />
+                      <HiOutlineMenuAlt1
+                        color="white"
+                        size={26}
+                        className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                      />
                     </>
                   )}
                 </button>
               </div>
               <div className="hidden md:flex xl:flex lg:flex justify-center gap-6 items-center">
                 <Link to="/" className="flex items-center">
-                  <AiOutlineHome size={26} className="" />
+                  <AiOutlineHome
+                    size={26}
+                    className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                  />
                 </Link>
                 <Link to="/shop" className="flex items-center">
-                  <AiOutlineShopping size={26} className="" />
+                  <AiOutlineShopping
+                    size={26}
+                    className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                  />
                 </Link>
                 <Link to="/cart" className="flex items-center relative">
-                  <AiOutlineShoppingCart size={26} className="" />
+                  <AiOutlineShoppingCart
+                    size={26}
+                    className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                  />
                   <div className="absolute top-[-10px] left-4">
                     {cartItems?.length > 0 && (
                       <span>
-                        <span className="h-4 w-4 px-1 py-0 text-sm text-white bg-[#db1143f3] rounded-full">
+                        <span className="h-4 w-4 px-1 py-0 text-sm  bg-[#db1143f3] rounded-full">
                           {cartItems?.reduce((a, c) => a + c.qty, 0)}
                         </span>
                       </span>
@@ -368,7 +388,10 @@ const Navigation = () => {
                   </div>
                 </Link>
                 <Link to="/favorite" className="flex items-center relative">
-                  <MdOutlineFavoriteBorder size={26} className="" />
+                  <MdOutlineFavoriteBorder
+                    size={26}
+                    className="text-[#d8e2f2c3] hover:text-[#FFF]"
+                  />
                   <FavoritesCount />
                 </Link>
               </div>
@@ -380,22 +403,22 @@ const Navigation = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 src={Logo}
-                className="w-[140px] h-fit"
+                className="w-[140px]"
               />
             </Link>
 
             <div
               className={`${
                 userInfo?.isAdmin ? "flex gap-2 md:gap-3" : ""
-              } relative `}
+              } relative`}
             >
               <button
                 onClick={toggleDropdown}
-                className="flex items-center text-gray-800 focus:outline-none"
+                className="flex items-center focus:outline-none"
               >
                 {userInfo ? (
-                  <span className="text-base font-medium text-[#F6F6F6] capitalize">
-                    {userInfo.username}
+                  <span className="flex gap-2 text-base font-medium capitalize text-[#d8e2f2c3] hover:text-[#FFF]">
+                    <p>Hello,</p> {userInfo.username}
                   </span>
                 ) : (
                   <></>
@@ -436,7 +459,7 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute bg-black text-[#ffffff] rounded-sm top-[50px] right-0 border border-[#919191] w-40 lg:w-52`}
+                  className={`absolute bg-[#0b111e] text-[#ffffff] rounded-sm top-[50px] right-0 border border-[#919191] w-40 lg:w-52`}
                   onClick={() => setDropdownOpen(false)}
                 >
                   <h2 className="w-full text-sm xl:text-lg font-semibold xl:font-bold border-b py-3">

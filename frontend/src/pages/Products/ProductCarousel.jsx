@@ -44,7 +44,10 @@ const ProductCarousel = () => {
             Featured Products
           </h1>
 
-          <Slider {...settings} className="w-[80vw] md:w-[45rem] mx-auto">
+          <Slider
+            {...settings}
+            className="w-[80vw] md:w-[40rem] 2xl:w-[50rem] mx-auto"
+          >
             {products.map(
               ({
                 image,

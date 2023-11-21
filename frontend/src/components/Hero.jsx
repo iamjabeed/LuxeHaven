@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="h-[520px] w-full flex justify-center py-8">
           <div className="w-[70%] pt-[4%] flex items-center md:text-center flex-col">
             <h4 className="text-[#c379ff] border border-[#c379ff] border-spacing-[1rem] text-sm md:text-xl border-dotted px-4 py-1 w-fit my-4">
-              Luxehaven: Your Effortless Shopping Sanctuary{" "}
+              Luxehaven: Where Shopping Meets Elegance, Seamlessly.{" "}
               <Link
                 to={"/shop"}
                 className="text-white hidden md:inline-block md:text-xl pl-2"

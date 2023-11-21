@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @font-face {
   font-family: canopee;
@@ -33,7 +33,7 @@ body {
 .apexcharts-menu {
   background: #000;
 }
-/* styles.css (or wherever you define your global styles) */
+
 .gradient-text {
   background-image: linear-gradient(0deg, #c892f3 57%, #ebebeb 67%);
   -webkit-background-clip: text;
@@ -47,5 +47,6 @@ footer {
   /* color:#FF2E63, */
   /* color:#EAEAEA */
 
-  color: #f84c01;
+  /* color: #f84c01; */
+  color: #ff4800;
 }

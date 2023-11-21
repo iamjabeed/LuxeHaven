@@ -1,4 +1,5 @@
-# E-Commerce Website Requirement Document
+# LuxeHaven - A Modern Fullstack E-Commerce Platform
+## Requirement Document
 
 ## Table of Contents
 

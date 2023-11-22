@@ -29,12 +29,12 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container border items-start flex wrap mx-auto h-[100vh] ">
+      <div className="container flex wrap mx-auto h-[100vh] w-full bg-[#0F172A]">
         {cartItems.length === 0 ? (
-          <div className="flex justify-center items-center flex-col h-screen">
-            <img src={EmptyBag} alt="EmptyBag" className="w-1/2" />
+          <div className="flex justify-center items-center flex-col w-full h-full">
+            <img src={EmptyBag} alt="EmptyBag" className="w-56" />
             <Link to="/shop">
-              <button className="bg-[#E96B10] hover:bg-[#ff7512] transition-colors text-black border-none outline-none w-[250px] md:w-[320px] 2xl:w-[420px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold relative">
+              <button className="bg-[#E96B10] hover:bg-[#ff7512] transition-colors text-black border-none outline-none w-[220px] md:w-[320px] 2xl:w-[420px] px-4 py-2 rounded cursor-pointer my-[1rem] text-base font-semibold relative">
                 {" "}
                 <BsArrowLeft size={26} className="absolute left-8 md:left-16" />
                 Go To Shop
@@ -43,7 +43,7 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <div className="flex w-[80%] md:w-[95%] justify-between flex-col lg:flex-row gap-4">
+            <div className="flex w-[100%] md:w-[95%] justify-between flex-col lg:flex-row gap-4">
               <div className="border border-[#444444] flex-1 px-4 py-2">
                 <h1 className="text-base md:text-2xl font-semibold mb-8">
                   Shopping Cart 🛒
@@ -51,7 +51,7 @@ const Cart = () => {
                 {cartItems?.map((item) => (
                   <div
                     key={item._id}
-                    className="flex md:gap-16 mb-6 lg:h-48 bg-black"
+                    className="flex md:gap-16 mb-6 h-40 md:h-52 bg-[#162036c9]"
                   >
                     <div className="overflow-hidden transition-transform ease-in-out duration-300 transform hover:scale-105 w-1/4 ">
                       <img
@@ -64,7 +64,7 @@ const Cart = () => {
                       <div className="w-[70%] pt-4">
                         <div className=" ">
                           <Link to={`/product/${item._id}`} className="">
-                            <h4 className="text-white capitalize text-sm md:text-base xl:text-lg font-normal xl:font-semibold hover:underline">
+                            <h4 className="text-white capitalize text-xs  md:text-base xl:text-lg font-light xl:font-semibold hover:underline">
                               {item.name.substring(0, 35)}...
                             </h4>
                           </Link>

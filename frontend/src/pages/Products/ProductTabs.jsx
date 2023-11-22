@@ -28,11 +28,11 @@ const ProductTabs = ({
   };
 
   return (
-    <div className="flex flex-col 2xl:flex-row">
-      <section className="mr-[1rem]">
+    <div className="flex flex-col container mx-auto bg-[#0F172A]">
+      <section className="flex w-full border-b">
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 1 ? "font-bold" : ""
+            activeTab === 1 ? "font-bold text-[#C077FC]" : ""
           }`}
           onClick={() => handleTabClick(1)}
         >
@@ -40,7 +40,7 @@ const ProductTabs = ({
         </div>
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 2 ? "font-bold" : ""
+            activeTab === 2 ? "font-bold text-[#C077FC]" : ""
           }`}
           onClick={() => handleTabClick(2)}
         >
@@ -48,7 +48,7 @@ const ProductTabs = ({
         </div>
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 3 ? "font-bold" : ""
+            activeTab === 3 ? "font-bold text-[#C077FC]" : ""
           }`}
           onClick={() => handleTabClick(3)}
         >
@@ -57,13 +57,13 @@ const ProductTabs = ({
       </section>
 
       {/* Second Part */}
-      <section>
+      <section className="w-1/2 flex container mx-auto">
         {activeTab === 1 && (
           <div className="mt-4">
             {userInfo ? (
               <form onSubmit={submitHandler}>
                 <div className="my-2">
-                  <label htmlFor="rating" className="block text-xl mb-2">
+                  <label htmlFor="rating" className="block text-xl">
                     Rating
                   </label>
 
@@ -72,7 +72,7 @@ const ProductTabs = ({
                     required
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-black"
+                    className="p-2 border rounded-sm xl:w-[40rem] outline-none text-white bg-[#0F172A]"
                   >
                     <option value="">Select</option>
                     <option value="1">Inferior</option>
@@ -84,7 +84,7 @@ const ProductTabs = ({
                 </div>
 
                 <div className="my-2">
-                  <label htmlFor="comment" className="block text-xl mb-2">
+                  <label htmlFor="comment" className="block text-xl">
                     Comment
                   </label>
 
@@ -93,14 +93,17 @@ const ProductTabs = ({
                     rows="3"
                     required
                     value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-black"
+                    onChange={(e) => {
+                      setComment(e.target.value);
+                      // window.location.reload();
+                    }}
+                    className="p-2 border rounded-sm xl:w-[40rem] outline-none text-white bg-[#0F172A]"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={loadingProductReview}
-                  className="bg-pink-600 text-white py-2 px-4 rounded-lg"
+                  className="bg-[#db1143f3] hover:bg-[#FF2E63] transition-colors text-white border-none outline-none w-full  px-4 py-2 rounded cursor-pointer text-base font-semibold mb-2"
                 >
                   Submit
                 </button>
@@ -114,16 +117,20 @@ const ProductTabs = ({
         )}
       </section>
 
-      <section>
+      <section className="flex container mx-auto">
         {activeTab === 2 && (
-          <>
-            <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
+          <div className="w-full">
+            {product.reviews.length === 0 && (
+              <div className="flex items-center justify-center h-full w-full">
+                {product.reviews.length === 0 && <p>No Reviews</p>}
+              </div>
+            )}
 
-            <div>
+            <div className="bg-[#0F172A] my-4 flex gap-2 flex-wrap mx-4">
               {product.reviews.map((review) => (
                 <div
                   key={review._id}
-                  className="bg-[#1A1A1A] p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] xl:w-[50rem] sm:w-[24rem] mb-5"
+                  className="py-2 px-3 border border-[#444444] w-full md:w-[30%]"
                 >
                   <div className="flex justify-between">
                     <strong className="text-[#B0B0B0]">{review.name}</strong>
@@ -137,13 +144,13 @@ const ProductTabs = ({
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
       </section>
 
-      <section>
+      <section className="flex  mt-8 mx-4">
         {activeTab === 3 && (
-          <section className="ml-[4rem] flex flex-wrap">
+          <section className="flex gap-4 flex-wrap">
             {!data ? (
               <Loader />
             ) : (

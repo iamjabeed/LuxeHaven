@@ -29,7 +29,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container justify-around items-start flex wrap mx-auto h-[100vh]">
+      <div className="container border items-start flex wrap mx-auto h-[100vh] ">
         {cartItems.length === 0 ? (
           <div className="flex justify-center items-center flex-col h-screen">
             <img src={EmptyBag} alt="EmptyBag" className="w-1/2" />
@@ -51,7 +51,7 @@ const Cart = () => {
                 {cartItems?.map((item) => (
                   <div
                     key={item._id}
-                    className="flex gap-16 mb-6 lg:h-44 bg-black"
+                    className="flex md:gap-16 mb-6 lg:h-48 bg-black"
                   >
                     <div className="overflow-hidden transition-transform ease-in-out duration-300 transform hover:scale-105 w-1/4 ">
                       <img
@@ -79,7 +79,7 @@ const Cart = () => {
 
                         <div className="flex gap-6">
                           <select
-                            className="outline-none p-1 border text-white bg-black"
+                            className="outline-none p-1 border text-white bg-[#0F172A]"
                             value={item.qty}
                             onChange={(e) =>
                               addToCartHandler(item, Number(e.target.value))

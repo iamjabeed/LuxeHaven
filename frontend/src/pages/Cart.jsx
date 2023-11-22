@@ -28,7 +28,7 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <div className="bg-[#0F172A]">
       <div className="container flex wrap mx-auto h-[100vh] w-full bg-[#0F172A]">
         {cartItems.length === 0 ? (
           <div className="flex justify-center items-center flex-col w-full h-full">
@@ -173,7 +173,7 @@ const Cart = () => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

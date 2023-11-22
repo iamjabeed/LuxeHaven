@@ -79,7 +79,7 @@ const Navigation = () => {
         mobileMenu
           ? " bg-[#FF4800] fixed top-0 left-0 right-0 w-full h-[70px] "
           : "bg-[#0F172A] backdrop-blur-lg"
-      } fixed top-0 left-0 w-full h-[80px]  p-5 text-[#D8E2F2] text-center z-10 transition-all ease-in duration-300 flex justify-between items-center`}
+      } fixed top-0 left-0 w-full h-[80px]  p-5 text-[#D8E2F2] text-center z-50 transition-all ease-in duration-300 flex justify-between items-center`}
     >
       <ContentWrapper>
         <div className="flex justify-between items-center text-[#D8E2F2]">

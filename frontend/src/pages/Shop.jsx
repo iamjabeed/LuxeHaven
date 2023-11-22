@@ -85,7 +85,7 @@ const Shop = () => {
     <div className="bg-[#0E1527] min-h-screen">
       <ContentWrapper>
         <div className="flex md:flex-row container mx-auto">
-          <div className="p-3 mb-4 border border-[#444444] h-full fixed top-[80px] z-20 overflow-y-scroll lg:w-[260px] pb-20 text-[#FFFFFF]">
+          <div className="hidden lg:block p-3 mb-4 border border-[#444444] h-full fixed top-[80px] z-20 overflow-y-scroll lg:w-[260px] pb-20 text-[#FFFFFF]">
             <h2 className="text-center py-2 bg-[#2765EC] text-[#FFFFFF] hover:shadow-md hover:bg-[#1b56d5] mb-2 rounded-sm">
               Filter by Categories
             </h2>
@@ -168,11 +168,13 @@ const Shop = () => {
               {products.length === 0 ? (
                 <Loader />
               ) : (
-                products?.map((p) => (
-                  <div className="p-3" key={p._id}>
-                    <ProductCard p={p} />
-                  </div>
-                ))
+                <div className="flex flex-wrap gap-8 w-full mx-auto justify-center items-center">
+                  {products?.map((p) => (
+                    <div className="" key={p._id}>
+                      <ProductCard p={p} />
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           </div>

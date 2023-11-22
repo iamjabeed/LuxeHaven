@@ -207,7 +207,7 @@ const Navigation = () => {
 
               {dropdownOpen && userInfo && (
                 <ul
-                  className={`absolute bg-[#000] text-[#ffffff] rounded-sm top-[50px] right-0 border border-[#858585] w-40 lg:w-52`}
+                  className={`absolute bg-[#000] text-[#ffffff] rounded-sm top-[50px] right-0 border border-[#858585] w-40 lg:w-52 z-20`}
                   onClick={() => setDropdownOpen(false)}
                 >
                   <h2 className="w-full text-sm xl:text-lg font-semibold xl:font-bold border-b border-[#858585] py-3">

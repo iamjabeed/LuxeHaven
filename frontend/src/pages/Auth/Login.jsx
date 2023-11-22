@@ -68,12 +68,10 @@ const Login = () => {
   };
 
   return (
-    <div className="grid place-content-center items-center">
-      <section className="ml-2 px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#eaeaea] overflow-hidden pt-[8%]">
+    <div className="grid place-content-center items-center bg-[#0f0f10] h-[100vh]">
+      <section className="ml-2 px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#ffffff] overflow-hidden pt-[8%]">
         {/* bg-[#2F3349] */}
-
-        {/* <div id="pattern" className="h-[80vh] w-[30%]"></div> */}
-        <div className="text-[#eaeaeab9]">
+        <div className="text-[#e0e0e0]">
           <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
             Log In
           </h1>

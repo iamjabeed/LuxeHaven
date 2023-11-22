@@ -55,8 +55,8 @@ const Register = () => {
   };
 
   return (
-    <section className="px-6 flex justify-around items-center flex-wrap gap-8  w-full text-[#eaeaea] overflow-hidden">
-      <div className="text-[#eaeaeab9]">
+    <section className="px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#ffffff] overflow-hidden bg-[#0f0f10] h-[100vh]">
+      <div className="text-[#e0e0e0]">
         {/* <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
           Register
         </h1> */}

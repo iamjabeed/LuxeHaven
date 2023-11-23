@@ -52,7 +52,7 @@ const Shipping = () => {
               <label className="block text-white mb-2">Address</label>
               <input
                 type="text"
-                className=" mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter address"
                 value={address}
                 required
@@ -76,7 +76,7 @@ const Shipping = () => {
               <label className="block text-white mb-2">Postal Code</label>
               <input
                 type="text"
-                className="t-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter postal code"
                 value={postalCode}
                 required
@@ -88,7 +88,7 @@ const Shipping = () => {
               <label className="block text-white mb-2">Country</label>
               <input
                 type="text"
-                className="t-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                className="p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] bg-[#0E1629] placeholder-[#eaeaeab9] text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                 placeholder="Enter country"
                 value={country}
                 required

@@ -55,7 +55,7 @@ const Register = () => {
   };
 
   return (
-    <section className="px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#ffffff] overflow-hidden bg-[#0f0f10] h-[100vh]">
+    <section className="px-6 flex justify-around items-center flex-wrap gap-8 w-full text-[#ffffff] overflow-hidden bg-[#0E1629] min-h-[100vh]">
       <div className="text-[#e0e0e0]">
         {/* <h1 className="text-xl md:text-2xl 2xl:text-3xl font-semibold mb-4 text-[#F6F6F6]">
           Register
@@ -78,7 +78,7 @@ const Register = () => {
             <input
               type="text"
               id="name"
-              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="John Doe"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -97,7 +97,7 @@ const Register = () => {
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="jhon.doe@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -116,7 +116,7 @@ const Register = () => {
             <input
               type={isVisiblePass ? "text" : "password"}
               id="password"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -140,7 +140,7 @@ const Register = () => {
             <input
               type={isVisiblePass ? "text" : "password"}
               id="confirmPassword"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               placeholder="********"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}

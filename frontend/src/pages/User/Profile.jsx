@@ -52,8 +52,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="">
-      <div className="px-4 flex justify-around items-center flex-wrap gap-8 h-[90vh] w-full text-gray-500 overflow-hidden">
+    <div className="bg-[#0E1629] min-h-screen">
+      <div className="px-4 flex justify-around items-center flex-wrap gap-8 w-full text-gray-500 overflow-hidden">
         <form
           onSubmit={submitHandler}
           className="container w-[21rem] md:w-[33rem] 2xl:w-[36rem]"
@@ -68,7 +68,7 @@ const Profile = () => {
             <input
               type="text"
               placeholder="Enter name"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               autoComplete="off"
@@ -82,7 +82,7 @@ const Profile = () => {
             <input
               type="email"
               placeholder="Enter email"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="off"
@@ -96,7 +96,7 @@ const Profile = () => {
             <input
               type="password"
               placeholder="Enter password"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="off"
@@ -110,7 +110,7 @@ const Profile = () => {
             <input
               type="password"
               placeholder="Confirm password"
-              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+              className="mt-1 p-2 border rounded w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />

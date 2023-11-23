@@ -1,5 +1,52 @@
+<div align="center">
+
 # LuxeHaven - A Modern Fullstack E-Commerce Platform
+
+</div>
+
+##### About Me🚀💫:
+
+**Jabeed Syed**
+
+[![iamjabeed - LuxeHaven](https://img.shields.io/static/v1?label=iamjabeed&message=LuxeHaven&color=%236D3CB4&logo=github)](https://github.com/iamjabeed/LuxeHaven "Go to GitHub repo")
+LinkedIn: [iamjabeed](https://www.linkedin.com/in/iamjabeed/)
+Instagram: [iamjabeed_04](https://www.instagram.com/iamjabeed_04/)
+
+#### Project Result Screenshots:
+
+_Home Page_
+![Screenshot 1](./frontend/public/HomePage.png)
+
+_Shop Page_
+![Screenshot 1](./frontend/public/shop.png)
+
+_Login Page_
+![Screenshot 1](./frontend/public/Login.png)
+
+_Register Page_
+![Screenshot 1](./frontend/public/Register.png)
+
+_Cart🛒_
+![Screenshot 1](./frontend/public/Cart.png)
+
+_Product Detailed Page_
+![Screenshot 1](./frontend/public/ProductDetailed.png)
+
+- Scroll down for Admin related pages
+
+## Getting Started
+
+Provide instructions on how to get a copy of the project and run it on a local machine. Include any dependencies that need to be installed.
+
+### Prerequisites
+
+List any software or libraries that need to be installed before running the project.
+
+<div align="center">
+
 ## Requirement Document
+
+</div>
 
 ## Table of Contents
 
@@ -146,3 +193,11 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
 ## 5. Conclusion
 
 This requirement document sets the bar for a top-notch MERN E-Commerce website. It aims to provide users with an outstanding shopping experience while empowering administrators with robust tools for efficient management. By incorporating modern technologies and an array of features, the website is poised to stand out in the competitive E-Commerce landscape.
+
+##### Admin Pages
+
+_All products_
+![Screenshot 1](./frontend/public/Admin_AllProducts.png)
+
+_All Orders_
+![Screenshot 1](./frontend/public/Admin_allOrders.png)

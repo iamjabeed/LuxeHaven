@@ -4,11 +4,12 @@
 
 </div>
 
-##### About Me🚀💫:
+## About Me🚀💫:
 
 **Jabeed Syed**
 
 [![iamjabeed - LuxeHaven](https://img.shields.io/static/v1?label=iamjabeed&message=LuxeHaven&color=%236D3CB4&logo=github)](https://github.com/iamjabeed/LuxeHaven "Go to GitHub repo")
+
 LinkedIn: [iamjabeed](https://www.linkedin.com/in/iamjabeed/)
 Instagram: [iamjabeed_04](https://www.instagram.com/iamjabeed_04/)
 
@@ -33,14 +34,6 @@ _Product Detailed Page_
 ![Screenshot 1](./frontend/public/ProductDetailed.png)
 
 - Scroll down for Admin related pages
-
-## Getting Started
-
-Provide instructions on how to get a copy of the project and run it on a local machine. Include any dependencies that need to be installed.
-
-### Prerequisites
-
-List any software or libraries that need to be installed before running the project.
 
 <div align="center">
 

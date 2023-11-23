@@ -21,7 +21,7 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="bg-[#0E1629] min-h-[100vh]">
         <div className="">
           <div className="p-3">
             <div className="text-center text-xl md:text-2xl font-bold">

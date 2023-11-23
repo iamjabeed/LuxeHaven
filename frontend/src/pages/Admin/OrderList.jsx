@@ -8,7 +8,7 @@ const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
 
   return (
-    <>
+    <div className="bg-[#0E1629] min-h-[100vh]">
       {isLoading ? (
         <div className="w-full h-[80vh] flex justify-center items-center">
           <Loader />
@@ -56,11 +56,11 @@ const OrderList = () => {
 
                 <td className="py-2">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                    <p className="px-2 py-1 text-center bg-[#FF2E63] max-w-[70%] rounded">
                       Pending
                     </p>
                   )}
@@ -68,11 +68,11 @@ const OrderList = () => {
 
                 <td className="px-2 py-2">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                    <p className="px-2 py-1 text-center bg-[#FF2E63] max-w-[70%] rounded">
                       Pending
                     </p>
                   )}
@@ -80,7 +80,9 @@ const OrderList = () => {
 
                 <td>
                   <Link to={`/order/${order._id}`}>
-                    <button>More</button>
+                    <button className="px-2 py-1 text-center bg-[#2765EC] max-w-[70%] rounded">
+                      More
+                    </button>
                   </Link>
                 </td>
               </tr>
@@ -88,7 +90,7 @@ const OrderList = () => {
           </tbody>
         </table>
       )}
-    </>
+    </div>
   );
 };
 

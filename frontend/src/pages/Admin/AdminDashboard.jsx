@@ -9,6 +9,7 @@ import {
 import { useState, useEffect } from "react";
 import OrderList from "./OrderList";
 import Loader from "../../components/Loader";
+import ContentWrapper from "../../components/ContentWrapper";
 
 const AdminDashboard = () => {
   const { data: sales, isLoading } = useGetTotalSalesQuery();
@@ -88,55 +89,57 @@ const AdminDashboard = () => {
   }, [salesDetail]);
 
   return (
-    <>
-      <section className="flex flex-col">
-        <div className="w-[80%] flex justify-around flex-wrap">
-          <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
-              $
+    <div className="bg-[#0E1629] min-h-[100vh]">
+      <ContentWrapper>
+        <section className="flex flex-col">
+          <div className="w-[80%] flex justify-around flex-wrap">
+            <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
+              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+                $
+              </div>
+
+              <p className="mt-5">Total Sales:</p>
+              <h1 className="text-xl font-bold">
+                $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
+              </h1>
             </div>
+            <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
+              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+                $
+              </div>
 
-            <p className="mt-5">Total Sales:</p>
-            <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
-            </h1>
-          </div>
-          <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
-              $
+              <p className="mt-5">Customers</p>
+              <h1 className="text-xl font-bold">
+                $ {isLoading ? <Loader /> : customers?.length}
+              </h1>
             </div>
+            <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
+              <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
+                $
+              </div>
 
-            <p className="mt-5">Customers</p>
-            <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : customers?.length}
-            </h1>
-          </div>
-          <div className="rounded-lg bg-[#080d17] p-5 w-[20rem] mt-5">
-            <div className="font-bold rounded-full w-[3rem] bg-[#BD7EF4] text-center p-3 text-black">
-              $
+              <p className="mt-5">All Orders</p>
+              <h1 className="text-xl font-bold">
+                $ {isLoading ? <Loader /> : orders?.totalOrders}
+              </h1>
             </div>
-
-            <p className="mt-5">All Orders</p>
-            <h1 className="text-xl font-bold">
-              $ {isLoading ? <Loader /> : orders?.totalOrders}
-            </h1>
           </div>
-        </div>
 
-        <div className="mt-[4rem] text-[#fff]">
-          <Chart
-            options={state.options}
-            series={state.series}
-            type="bar"
-            width="100%"
-          />
-        </div>
+          <div className="mt-[4rem] text-[#fff]">
+            <Chart
+              options={state.options}
+              series={state.series}
+              type="bar"
+              width="100%"
+            />
+          </div>
 
-        <div className="mt-[4rem]">
-          <OrderList />
-        </div>
-      </section>
-    </>
+          <div className="mt-[4rem]">
+            <OrderList />
+          </div>
+        </section>
+      </ContentWrapper>
+    </div>
   );
 };
 

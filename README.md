@@ -4,9 +4,8 @@
 
 </div>
 
-## About Me🚀💫:
-
-**Jabeed Syed**
+## About Me🚀:
+>Jabeed Syed
 
 [![iamjabeed - LuxeHaven](https://img.shields.io/static/v1?label=iamjabeed&message=LuxeHaven&color=%236D3CB4&logo=github)](https://github.com/iamjabeed/LuxeHaven "Go to GitHub repo")
 

@@ -4,14 +4,11 @@
 
 </div>
 
-## About Me🚀💫:
-
-**Jabeed Syed**
-
 [![iamjabeed - LuxeHaven](https://img.shields.io/static/v1?label=iamjabeed&message=LuxeHaven&color=%236D3CB4&logo=github)](https://github.com/iamjabeed/LuxeHaven "Go to GitHub repo")
 
-LinkedIn: [iamjabeed](https://www.linkedin.com/in/iamjabeed/)
-Instagram: [iamjabeed_04](https://www.instagram.com/iamjabeed_04/)
+- LinkedIn: [iamjabeed](https://www.linkedin.com/in/iamjabeed/)
+
+- Instagram: [iamjabeed_04](https://www.instagram.com/iamjabeed_04/)
 
 #### Project Result Screenshots:
 

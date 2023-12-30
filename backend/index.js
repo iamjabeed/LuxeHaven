@@ -4,7 +4,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
-// Utiles
+// Utils
 
 import connectDB from "./config/db.js";
 import userRouter from "./routes/userRouter.js";

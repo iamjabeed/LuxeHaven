@@ -1,6 +1,6 @@
 <div align="center">
 
-# LuxeHaven - A Modern Fullstack E-Commerce Platform
+# LuxeHaven - A Modern Fullstack (MERN) E-Commerce Platform
 
 </div>
 

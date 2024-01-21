@@ -30,7 +30,7 @@ const store = configureStore({
     getDefaultMiddleware().concat(apiSlice.middleware),
 
   // Enable Redux DevTools for debugging during development
-  devTools: true,
+  devTools: false,
 });
 
 // Set up listeners for Redux Toolkit's query slices

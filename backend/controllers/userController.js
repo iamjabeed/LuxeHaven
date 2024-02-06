@@ -80,7 +80,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   POST /api/v1/users/logout
 const logoutCurrentUser = asyncHandler(async (req, res) => {
   res.cookie("jwt", "", {
-    httyOnly: true,
+    httpOnly: true,
     expires: new Date(0),
   });
 

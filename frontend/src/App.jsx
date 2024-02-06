@@ -5,8 +5,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContentWrapper from "./components/ContentWrapper";
 import Footer from "./pages/Footer";
-import Cursor from "./components/Cursor";
-// import Shery from "sheryjs";
+// import Cursor from "./components/Cursor";
+// // import Shery from "sheryjs";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <ToastContainer />
       <Navigation />
       <main className="mt-[80px]">
-        <Cursor />
+        {/* <Cursor /> */}
         <Outlet />
       </main>
       {/* <Footer /> */}

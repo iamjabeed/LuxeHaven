@@ -73,7 +73,7 @@ This requirement document outlines the features and tech stacks for the developm
 - Product details pages with high-resolution images, comprehensive descriptions, user reviews, and related product suggestions.
 - User-friendly shopping cart with the capability to add, remove, and modify items.
 - Streamlined and secure checkout process with multiple payment options.
-- Integration with RazorPay for seamless and secure transactions.
+- Integration with PayPal for seamless and secure transactions.
 - Automated order confirmation emails and SMS notifications with tracking details(v2).
 - The ability for users to leave detailed reviews and ratings for products.
 - Product comparison functionality to assist users in making informed purchase decisions(v2).
@@ -122,7 +122,7 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
   - Dynamic product catalog.
   - Product details with images, descriptions, and reviews.
   - Shopping cart and checkout process.
-  - Integration with RazorPay for payments.
+  - Integration with PayPal for payments.
   - Order confirmation and tracking.
 
 - **Search and Navigation**:
@@ -166,7 +166,7 @@ To achieve our vision of creating a top-notch E-Commerce website, we have the fo
 - **React Router**: For managing routes and navigation.
 - **Redux Toolkit**: State management and optimization.
 - **RTK Query**: For making API requests to the backend.
-- **RazorPay Integration**: Handling secure payments.
+- **PayPal Integration**: Handling secure payments.
 - **ApexCharts**: Creating stunning charts and analytics.
 - **TailwindCSS**: Styling and layout.
 

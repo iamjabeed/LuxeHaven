@@ -154,12 +154,12 @@ const Order = () => {
 
               <p className="mb-4">
                 <strong className="text-[#FF2E63]">Name:</strong>{" "}
-                {order.user.username}
+                {order?.user.username}
               </p>
 
               <p className="mb-4">
                 <strong className="text-[#FF2E63]">Email:</strong>{" "}
-                {order.user.email}
+                {order?.user.email}
               </p>
 
               <p className="mb-4">

@@ -132,7 +132,7 @@ const ProductUpdate = () => {
   };
   return (
     <>
-      <div className="grid place-content-center items-center text-[#eaeaea] py-5 pl-6  sm:pl-[20%] xl:pl-0">
+      <div className="grid place-content-center items-center text-[#eaeaea] py-5 pl-6  sm:pl-[20%] xl:pl-0 bg-[#0e1629]">
         <div className="flex flex-col justify-center items-center">
           {/* <AdminMenu /> */}
           <div className="flex flex-col ">
@@ -166,7 +166,7 @@ const ProductUpdate = () => {
                   onChange={uploadFileHandler}
                   className={`${
                     !image ? "hidden" : " "
-                  } ml-6 mt-1 p-2 bg-[#0F0F10] placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
+                  } ml-6 mt-1 p-2 bg-[#0E1629] placeholder-[#eaeaeab9] text-[#db1143f3] outline-none border-none text-base `}
                 />
               </label>
             </div>
@@ -177,7 +177,7 @@ const ProductUpdate = () => {
                   <label htmlFor="name">Name</label> <br />
                   <input
                     type="text"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -186,7 +186,7 @@ const ProductUpdate = () => {
                   <label htmlFor="name block">Price</label> <br />
                   <input
                     type="number"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
@@ -197,7 +197,7 @@ const ProductUpdate = () => {
                   <label htmlFor="name block">Quantity</label> <br />
                   <input
                     type="number"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                   />
@@ -206,7 +206,7 @@ const ProductUpdate = () => {
                   <label htmlFor="name block">Brand</label> <br />
                   <input
                     type="text"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
                   />
@@ -217,7 +217,7 @@ const ProductUpdate = () => {
                 <label htmlFor="">Description</label>
                 <textarea
                   type="text"
-                  className="mt-1 p-2 border rounded  mb-1 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63] w-[320px] md:w-[460px] xl:w-[100%]"
+                  className="mt-1 p-2 border rounded  mb-1 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63] w-[320px] md:w-[460px] xl:w-[100%]"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
@@ -228,7 +228,7 @@ const ProductUpdate = () => {
                   <label htmlFor="name block">Count In Stock</label> <br />
                   <input
                     type="text"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     value={stock}
                     onChange={(e) => setStock(e.target.value)}
                   />
@@ -238,7 +238,7 @@ const ProductUpdate = () => {
                   <label htmlFor="">Category</label> <br />
                   <select
                     placeholder="Choose Category"
-                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0F0F10] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
+                    className="mt-1 p-2 border rounded  w-[320px] md:w-[460px] 2xl:w-[520px] mb-4 bg-[#0E1629] placeholder-[#eaeaeab9]  text-[#F6F6F6] outline-none border-[#57575b] focus:border-[#FF2E63]"
                     onChange={(e) => setCategory(e.target.value)}
                   >
                     {categories?.map((category) => (
